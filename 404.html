@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#F4EFE3">
+<title>404 · Not Found</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600&family=Noto+Sans+Devanagari:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light only;--paper:#F4EFE3;--ink:#1F1A12;--mut:#6B5F4E;--accent:#B0411E;--gold:#A88534;--border:#C9BFA8}
+html{background:#F4EFE3 !important;color:#1F1A12 !important}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Cormorant Garamond',serif;background:#F4EFE3;color:#1F1A12;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem}
+.box{text-align:center;max-width:480px}
+.dev{font-family:'Noto Sans Devanagari',serif;color:var(--gold);font-size:1.6rem;letter-spacing:.1em;margin-bottom:1rem}
+.code{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.6rem}
+h1{font-size:clamp(2rem,7vw,3.2rem);font-weight:600;font-style:italic;line-height:1.15;margin-bottom:1rem;color:var(--ink)}
+p{font-size:1.05rem;color:var(--mut);font-style:italic;line-height:1.6;margin-bottom:2rem}
+a{display:inline-block;font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--paper);background:var(--ink);padding:10px 22px;text-decoration:none;border:1.5px solid var(--ink);transition:all .25s}
+a:hover{background:transparent;color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="box">
+<div class="dev">॥ न लभ्यते ॥</div>
+<div class="code">Error · 404</div>
+<h1>The page is not here</h1>
+<p>Charaka would have called this <em>marga-bhrama</em> — a wandering of the path. Easily corrected.</p>
+<a id="home" href="/">Return home</a>
+</div>
+<script>
+// Resolve the correct site root for GitHub Pages project sites
+// (username.github.io/repo-name/) as well as user/org pages and custom domains.
+(function(){
+  var a = document.getElementById('home');
+  var host = location.hostname;
+  var segs = location.pathname.split('/').filter(Boolean);
+  if(host.endsWith('.github.io') && segs.length > 0){
+    // Project page: first segment is the repo name
+    a.href = '/' + segs[0] + '/';
+  } else {
+    a.href = '/';
+  }
+})();
+</script>
+</body>
+</html>

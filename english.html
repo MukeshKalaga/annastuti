@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#F4EFE3">
+<meta name="supported-color-schemes" content="light">
+<title>Ancient Indian Diet · Pre-1200 AD Research</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Force light scheme regardless of system setting */
+:root{
+  color-scheme: light only;
+  --paper:#F4EFE3;
+  --paper-2:#EBE4D1;
+  --ink:#1F1A12;
+  --ink-soft:#3D342A;
+  --mut:#6B5F4E;
+  --accent:#B0411E;
+  --gold:#A88534;
+  --sage:#5A6B3D;
+  --terracotta:#C67651;
+  --border:#C9BFA8;
+}
+
+/* Override dark mode forcing */
+html{
+  background:#F4EFE3 !important;
+  color:#1F1A12 !important;
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    color-scheme: light only;
+  }
+  html, body{
+    background:#F4EFE3 !important;
+    color:#1F1A12 !important;
+  }
+}
+
+*{margin:0;padding:0;box-sizing:border-box;-webkit-text-size-adjust:100%}
+html{background:#F4EFE3}
+body{
+  font-family:'Cormorant Garamond',serif;
+  background:#F4EFE3;
+  color:#1F1A12;
+  line-height:1.7;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+}
+
+/* Ornamental backdrop */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background-image:
+    radial-gradient(ellipse at 20% 10%,rgba(176,65,30,.04),transparent 50%),
+    radial-gradient(ellipse at 80% 80%,rgba(168,133,52,.05),transparent 55%);
+  pointer-events:none;
+  z-index:0;
+}
+body::after{
+  content:'';
+  position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.10 0 0 0 0 0.07 0 0 0 0.15 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity:.35;pointer-events:none;z-index:0;mix-blend-mode:multiply
+}
+
+.wrap{max-width:880px;margin:0 auto;padding:2rem 1.2rem 3rem;position:relative;z-index:1}
+
+/* Header */
+.hero{text-align:center;padding:1rem 0 2.5rem;border-bottom:1px solid var(--border);position:relative}
+.eye{font-family:'Noto Sans Devanagari',serif;font-size:1.8rem;color:var(--accent);margin-bottom:.8rem;letter-spacing:.05em}
+.hero h1{font-size:clamp(1.9rem,6vw,3.4rem);font-weight:600;line-height:1.15;letter-spacing:-.01em;margin-bottom:.6rem;font-style:italic;color:var(--ink)}
+.hero .sub{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);margin-top:1rem}
+.hero .dev{font-family:'Noto Sans Devanagari',serif;color:var(--gold);font-size:1.2rem;margin:.8rem 0}
+.hero p{font-size:1rem;color:var(--mut);max-width:580px;margin:0 auto;font-style:italic;padding:0 .5rem}
+
+.orn{text-align:center;margin:3rem 0 1.5rem;color:var(--gold);font-size:1.3rem;letter-spacing:1em;padding-left:1em}
+
+/* Nav */
+.nav{
+  display:flex;gap:5px;
+  overflow-x:auto;
+  padding:1rem .2rem;
+  position:sticky;top:0;
+  background:var(--paper);
+  z-index:50;
+  margin:0 -.5rem;
+  padding-left:.8rem;padding-right:.8rem;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+.nav::-webkit-scrollbar{display:none}
+.nav::before{content:'';position:absolute;inset:0;background:var(--paper);z-index:-1}
+.nav button{
+  font-family:'Inter',sans-serif;
+  background:transparent;
+  border:1px solid var(--border);
+  color:var(--ink-soft);
+  padding:7px 14px;
+  font-size:.68rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:all .3s;
+  border-radius:0;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+.nav button:hover{border-color:var(--accent);color:var(--accent)}
+.nav button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+.sec{display:none;animation:fi .6s ease}
+.sec.on{display:block}
+@keyframes fi{from{opacity:0;transform:translateY(12px)}to{opacity:1}}
+
+/* Headings */
+h2{font-size:clamp(1.6rem,5vw,2.4rem);font-weight:600;line-height:1.2;margin:2rem 0 1rem;font-style:italic;color:var(--ink)}
+h2 .num{font-family:'Inter',sans-serif;font-style:normal;font-size:.65rem;letter-spacing:.18em;color:var(--accent);display:block;margin-bottom:.5rem;font-weight:500}
+h3{font-size:clamp(1.25rem,4vw,1.5rem);font-weight:600;margin:1.8rem 0 .7rem;font-style:italic;color:var(--ink)}
+h4{font-family:'Inter',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin:1.5rem 0 .6rem}
+
+p{font-size:1.05rem;line-height:1.75;margin-bottom:1.1rem;color:var(--ink-soft)}
+.lead{font-size:clamp(1.1rem,3.5vw,1.25rem);line-height:1.6;margin-bottom:1.5rem;color:var(--ink)}
+.lead::first-letter{font-size:3.2rem;font-weight:600;float:left;line-height:.85;padding:.3rem .5rem 0 0;color:var(--accent);font-style:italic}
+
+em{color:var(--accent);font-style:italic}
+strong{font-weight:600;color:var(--ink)}
+.sans{font-family:'Noto Sans Devanagari',serif;color:var(--gold);font-weight:500}
+
+ol, ul{padding-left:1.3rem;margin:1rem 0;color:var(--ink-soft)}
+li{font-size:1rem;line-height:1.7;margin-bottom:.5rem}
+
+/* Pullquote */
+.pull{
+  border-left:3px solid var(--accent);
+  padding:1rem 1.2rem;
+  margin:1.5rem 0;
+  background:rgba(176,65,30,.05);
+  font-size:1.08rem;
+  line-height:1.6;
+  font-style:italic;
+  color:var(--ink);
+}
+.pull .cite{display:block;margin-top:.7rem;font-family:'Inter',sans-serif;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);font-style:normal}
+
+/* Tables - mobile safe */
+.tbl-wrap{overflow-x:auto;margin:1.3rem -.5rem;padding:0 .5rem;-webkit-overflow-scrolling:touch}
+.tbl{width:100%;border-collapse:collapse;font-family:'Inter',sans-serif;font-size:.82rem;min-width:500px;background:rgba(255,255,255,.3)}
+.tbl thead{background:var(--ink);color:var(--paper)}
+.tbl th{padding:.7rem .8rem;text-align:left;font-weight:500;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--paper)}
+.tbl td{padding:.8rem;border-bottom:1px solid var(--border);vertical-align:top;color:var(--ink-soft)}
+.tbl tr:nth-child(even){background:rgba(201,191,168,.2)}
+.tbl td strong{color:var(--accent);font-weight:600}
+
+/* Cards */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1.3rem 0}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.8rem;margin:1.3rem 0}
+@media(max-width:640px){
+  .grid-2,.grid-3{grid-template-columns:1fr;gap:.7rem}
+}
+.card{
+  background:rgba(255,255,255,.55);
+  border:1px solid var(--border);
+  padding:1rem 1.1rem;
+  position:relative;
+  color:var(--ink-soft);
+}
+.card::before{content:'';position:absolute;top:5px;left:5px;right:5px;bottom:5px;border:1px solid rgba(168,133,52,.2);pointer-events:none}
+.card h5{font-family:'Inter',sans-serif;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem;font-weight:600}
+.card .name{font-size:1.1rem;font-weight:600;font-style:italic;margin-bottom:.4rem;color:var(--ink)}
+.card .sans-name{font-family:'Noto Sans Devanagari',serif;font-size:.95rem;color:var(--accent);margin-bottom:.4rem;font-weight:500}
+.card p{font-size:.9rem;margin:0;line-height:1.65;color:var(--ink-soft)}
+
+/* Timeline */
+.tl{position:relative;padding-left:1.6rem;margin:1.5rem 0}
+.tl::before{content:'';position:absolute;left:.4rem;top:0;bottom:0;width:1px;background:var(--border)}
+.tl-item{position:relative;margin-bottom:1.8rem}
+.tl-item::before{content:'';position:absolute;left:-1.55rem;top:.3rem;width:11px;height:11px;background:var(--accent);border-radius:50%;border:3px solid var(--paper);box-shadow:0 0 0 1px var(--accent)}
+.tl-date{font-family:'Inter',sans-serif;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem;font-weight:600}
+.tl-title{font-size:1.1rem;font-weight:600;font-style:italic;margin-bottom:.4rem;color:var(--ink)}
+.tl-item p{font-size:.95rem;margin:0;line-height:1.65}
+
+/* Meal integration */
+.meals-block{margin:1.3rem 0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.5rem 0}
+.meal-row{
+  display:grid;
+  grid-template-columns:70px 1fr 1fr;
+  gap:.8rem;
+  padding:.9rem 0;
+  border-bottom:1px solid var(--border);
+  align-items:start;
+}
+.meal-row:last-child{border:none}
+.meal-day{font-family:'Inter',sans-serif;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600;padding-top:.2rem}
+.meal-current,.meal-new{font-size:.9rem;color:var(--ink-soft);line-height:1.55}
+.meal-current{text-decoration:line-through;opacity:.55}
+.meal-new strong{color:var(--accent)}
+
+@media(max-width:640px){
+  .meal-row{grid-template-columns:1fr;gap:.3rem;padding:.9rem 0}
+  .meal-day{padding-top:0;margin-bottom:.2rem}
+  .meal-current{opacity:.45}
+}
+
+/* Footnotes */
+.foot{border-top:1px solid var(--border);margin-top:2.5rem;padding-top:1.5rem;font-family:'Inter',sans-serif;font-size:.78rem;color:var(--mut);line-height:1.7}
+.foot ol{padding-left:1.2rem}
+.foot li{margin-bottom:.5rem;font-size:.78rem;color:var(--mut)}
+.foot strong{color:var(--ink-soft)}
+.foot em{color:var(--ink-soft);font-style:italic}
+
+/* Stats highlight */
+.stat-band{
+  background:var(--ink);
+  color:var(--paper);
+  padding:1.8rem 1.2rem;
+  margin:1.8rem -.3rem;
+  text-align:center;
+  position:relative;
+  border-radius:2px;
+}
+.stat-band::before{content:'';position:absolute;top:8px;left:8px;right:8px;bottom:8px;border:1px solid rgba(168,133,52,.3);pointer-events:none}
+.stat-band .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;position:relative;z-index:1}
+.stat-band .num{font-size:clamp(1.6rem,5vw,2.2rem);font-weight:600;font-style:italic;color:var(--gold);line-height:1}
+.stat-band .lbl{font-family:'Inter',sans-serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;opacity:.8;margin-top:.4rem;color:var(--paper)}
+@media(max-width:560px){
+  .stat-band{padding:1.5rem 1rem}
+  .stat-band .stat-grid{grid-template-columns:1fr;gap:1.3rem}
+}
+
+/* Principle card */
+.principle{padding:1.3rem 0;border-bottom:1px solid var(--border)}
+.principle:last-child{border:none}
+.principle .pn{font-family:'Inter',sans-serif;font-size:.65rem;letter-spacing:.15em;color:var(--accent);font-weight:600;margin-bottom:.4rem}
+.principle h4{margin-top:.2rem;color:var(--ink);text-transform:none;font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;font-style:italic;letter-spacing:0}
+.principle p{font-size:1rem;line-height:1.7}
+
+/* Devanagari separator */
+.dev-sep{text-align:center;font-family:'Noto Sans Devanagari',serif;color:var(--gold);font-size:1rem;margin:2rem 0;letter-spacing:.25em;opacity:.7}
+
+sup{font-size:.65em;color:var(--accent);font-weight:600}
+
+/* Mobile specific */
+@media(max-width:480px){
+  .wrap{padding:1.5rem 1rem 2.5rem}
+  .hero{padding-top:.5rem}
+  .eye{font-size:1.5rem}
+  .hero .dev{font-size:1.1rem}
+  h2{margin:1.5rem 0 .8rem}
+  p{font-size:1rem;line-height:1.7}
+  .tl{padding-left:1.3rem}
+  .tl-item::before{left:-1.25rem;width:10px;height:10px}
+  .pull{padding:.9rem 1rem;font-size:1rem}
+  .card{padding:.9rem 1rem}
+  .card p{font-size:.88rem}
+  li{font-size:.95rem}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<!-- HERO -->
+<div class="hero">
+<div class="eye">॥ अन्नं ब्रह्म ॥</div>
+<h1>Food is Brahman</h1>
+<div class="dev">अन्नं ब्रह्मेति व्यजानात्</div>
+<p>What pre-1200 AD Indians actually ate — and what modern science is rediscovering about their wisdom.</p>
+<div class="sub">A research-backed guide · 2026</div>
+</div>
+
+<!-- NAV -->
+<div class="nav" id="nav">
+<button class="on" data-s="intro">Intro</button>
+<button data-s="grains">Grains</button>
+<button data-s="timeline">5000 Years</button>
+<button data-s="foods">Daily Foods</button>
+<button data-s="protein">Protein</button>
+<button data-s="navadhanya">Nava Dhanya</button>
+<button data-s="principles">Principles</button>
+<button data-s="herbs">Herbs</button>
+<button data-s="meals">Your Plan</button>
+<button data-s="modern">Modern Disease</button>
+<button data-s="sources">Sources</button>
+</div>
+
+<!-- INTRODUCTION -->
+<div class="sec on" id="intro">
+<p class="lead">Before the Green Revolution. Before British famine economics. Before the Mughal court's rice-and-biryani obsession. Before even the Gupta Golden Age — the Indian subcontinent ate very differently than we imagine today.</p>
+
+<p>The story modern Indians tell themselves — that rice-dal-subzi is "our traditional diet" — is largely a twentieth-century invention. Walk into any Telugu kitchen in the year 900 AD and you'd find <em>jonna rotte</em> and <em>ragi sangati</em>, not a mound of white rice. In Punjab you'd find <em>yava</em> (barley) dominating. In the Indus Valley cities of 2500 BCE, archaeological digs reveal <strong>barley and wheat as the dominant grains</strong> — with rice as a minor, regional player.</p>
+
+<div class="pull">
+"Charaka listed six tastes in every meal, seasonal eating protocols, and food-body constitution matching 2,000 years before modern nutritional science rediscovered these principles. The wisdom was systematic, not folk."
+</div>
+
+<p>This guide isn't about romanticizing the past or rejecting modernity. It's about answering one specific question with honesty: <strong>what did people in the Indian subcontinent actually eat in the pre-1200 AD period, and does any of it matter for how you should eat today?</strong></p>
+
+<p>The short answer: more than you'd think.</p>
+
+<div class="dev-sep">॥ ॐ ॥</div>
+
+<h3>What this guide covers</h3>
+
+<div class="grid-2">
+<div class="card">
+<h5>Part I · History</h5>
+<div class="name">The real diet</div>
+<p>What actual Vedic texts, the Charaka Samhita, and archaeological digs tell us — not marketing copy from supplement brands.</p>
+</div>
+<div class="card">
+<h5>Part II · Principles</h5>
+<div class="name">Timing & tastes</div>
+<p>Six-taste meals, seasonal regimens, the eat-with-the-sun principle — and which of these have been validated by modern science.</p>
+</div>
+<div class="card">
+<h5>Part III · Application</h5>
+<div class="name">Modern meal plan</div>
+<p>Two millet days to integrate into a modern weekly diet, chosen to preserve macros while honoring Telugu culinary heritage.</p>
+</div>
+<div class="card">
+<h5>Part IV · Sources</h5>
+<div class="name">The evidence</div>
+<p>Every claim linked back to primary texts or peer-reviewed research. No Ayurveda-brand marketing. No Instagram-guru hearsay.</p>
+</div>
+</div>
+</div>
+
+<!-- GRAINS -->
+<div class="sec" id="grains">
+<h2><span class="num">Part I · Chapter 1</span>Was pre-1200 AD India rice-heavy?</h2>
+
+<p class="lead">No. The rice-centric diet you see in modern India is roughly 60 years old. Before the 1960s Green Revolution made rice artificially cheap, the subcontinent ate a radically more diverse grain base — with rice often being a minor, festival, or regional staple.</p>
+
+<h3>What the Vedas actually say</h3>
+
+<p>The <em>Rigveda</em> (c. 1500-1000 BCE) mentions <span class="sans">यव</span> (<em>Yava</em>, barley) more than any other grain — dozens of references, used in rituals, as daily food, and as offerings. <span class="sans">व्रीहि</span> (<em>Vrihi</em>, rice) appears, but as one grain among many, never as <em>the</em> staple.<sup>[1]</sup></p>
+
+<p>By the time of the Charaka Samhita (c. 100 BCE – 200 CE), the classification was systematic. Grains were grouped under <em>Shuka Dhanya</em> (bristled grains) in this rough order of importance:</p>
+
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>Sanskrit</th><th>Grain</th><th>Notes from Charaka</th></tr></thead>
+<tbody>
+<tr><td><span class="sans">शालि</span> <em>Shali</em></td><td>Rice varieties</td><td>Sweet, cold-potency, constipating if eaten in excess</td></tr>
+<tr><td><span class="sans">गोधूम</span> <em>Godhuma</em></td><td>Wheat</td><td>Nourishing, heavy to digest, strength-promoting</td></tr>
+<tr><td><span class="sans">यव</span> <em>Yava</em></td><td>Barley</td><td><strong>Declared <em>nityasevaniya dravya</em> — food for daily intake</strong></td></tr>
+<tr><td><span class="sans">श्यामाक</span> <em>Shyamaka</em></td><td>Barnyard millet</td><td>Light, absorbs moisture, good for Kapha</td></tr>
+<tr><td><span class="sans">चीनक</span> <em>Chinaka</em></td><td>Millets (general)</td><td>Astringent, dry, mentioned extensively</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="pull">
+"Acharya Charaka mentioned <em>Yava</em> as <em>nityasevaniya dravya</em> — meant for daily intake — which underlines the importance of barley in disease prevention and health management."
+<span class="cite">Sushruta Samhita Sutra 46/41-42</span>
+</div>
+
+<h3>The regional picture</h3>
+
+<p>The Charaka Samhita itself — astonishingly — acknowledges <strong>regional dietary diversity</strong>. Different parts of the subcontinent ate different grains:</p>
+
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>Region</th><th>Primary grain(s)</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td>Sindhu Desha (NW)</td><td>Wheat, barley</td><td>Cooler, drier climate</td></tr>
+<tr><td>Madhya Desha (Central)</td><td>Barley, wheat, dairy</td><td>Charaka's home region</td></tr>
+<tr><td>Rajasthan/Gujarat</td><td><strong>Bajra, jowar, wheat</strong></td><td>Drought-resistant grains</td></tr>
+<tr><td>Deccan (Telangana/AP)</td><td><strong>Jonna, ragi, korra</strong></td><td>Semi-arid plateau</td></tr>
+<tr><td>Tamilakam (South)</td><td>Rice, ragi, mixed</td><td>Water availability varied</td></tr>
+<tr><td>Vanga (Bengal)</td><td>Rice-dominant</td><td>The only clearly rice-heavy region</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Note: <strong>Telugu heritage in the Telangana region centered on jonna rotte and ragi sangati as daily staples for centuries.</strong> White rice at every meal is a recent break from a millennia-long tradition in the region.</p>
+
+<div class="stat-band">
+<div class="stat-grid">
+<div><div class="num">~5×</div><div class="lbl">References to barley vs rice in Rigveda</div></div>
+<div><div class="num">1960s</div><div class="lbl">When rice became the national staple</div></div>
+<div><div class="num">6</div><div class="lbl">Distinct regional grain cultures in Charaka</div></div>
+</div>
+</div>
+
+<h3>Why the shift happened</h3>
+
+<p>Five forces converged between 1900 and 1970 to make rice India's "traditional" staple:</p>
+
+<ol>
+<li><strong>British famine policy.</strong> Colonial administrators promoted rice and wheat because they stored and transported better. Millets, requiring local grinding and immediate consumption, were labeled "primitive."</li>
+<li><strong>Green Revolution (1960s-70s).</strong> IR8 "miracle rice" and high-yield wheat got massive government subsidies. Millet research was effectively abandoned.</li>
+<li><strong>PDS/ration system.</strong> Cheap rice via public distribution displaced diverse local grains. Millets became "poor man's food."</li>
+<li><strong>Urbanization.</strong> Millets required daily grinding — feasible in villages, impractical in Bombay flats. Rice cooks in 15 minutes with no prep.</li>
+<li><strong>Cultural aspiration.</strong> White rice became associated with prosperity, cleanliness, modernity. Millets got coded as rural and backward.</li>
+</ol>
+
+<p>The irony: a grandmother in 1960s rural Andhra was probably eating a more nutritious, more "traditionally Indian" diet than most urban Indians today.</p>
+</div>
+
+<!-- TIMELINE -->
+<div class="sec" id="timeline">
+<h2><span class="num">Part I · Chapter 2</span>Five thousand years of eating</h2>
+
+<p class="lead">The diet of the subcontinent evolved constantly. Here's what we know from archaeology and surviving texts, condensed to a timeline.</p>
+
+<div class="tl">
+
+<div class="tl-item">
+<div class="tl-date">2600 – 1900 BCE</div>
+<div class="tl-title">Indus Valley Civilization</div>
+<p>Carbonized grain samples from Harappa and Mohenjo-daro show <strong>barley and wheat were the primary grains</strong>. Evidence of sesame (tila), peas, lentils, and dates. Bajra found at Gujarat sites. Rice present but minor. Dairy consumption confirmed by chemical residue analysis of pottery.<sup>[2]</sup></p>
+</div>
+
+<div class="tl-item">
+<div class="tl-date">1500 – 500 BCE</div>
+<div class="tl-title">Vedic Period</div>
+<p>The Rigveda lists barley (Yava), wheat (Godhuma), sesame (Tila), and rice (Vrihi). Yavagu — barley gruel — is the standard food for the sick. Soma (a now-lost plant extract) used ritually. Dairy heavily consumed: milk, ghee, takra (buttermilk), curd. Meat (especially goat) eaten ceremonially.<sup>[3]</sup></p>
+</div>
+
+<div class="tl-item">
+<div class="tl-date">600 BCE – 200 CE</div>
+<div class="tl-title">Charaka & Sushruta Era</div>
+<p>Formal medical texts codify dietary science. Six tastes (Shadrasa), three body constitutions (Vata-Pitta-Kapha), seasonal eating (Ritucharya), food incompatibilities (Virudhahara). Barley declared "nityasevaniya" — for daily intake. Ghee glorified as a brain food. <strong>Rice is one of many grains, not dominant.</strong></p>
+</div>
+
+<div class="tl-item">
+<div class="tl-date">300 BCE – 500 CE</div>
+<div class="tl-title">Mauryan & Gupta period</div>
+<p>Kautilya's Arthashastra describes state granaries stocking <strong>barley, wheat, rice, millets, and pulses</strong>. Buddhist vinaya texts document monk meals: rice or barley porridge, vegetables, fruit. Trade brings new items — black pepper moves west, new spices enter from Central Asia.<sup>[4]</sup></p>
+</div>
+
+<div class="tl-item">
+<div class="tl-date">500 – 1200 CE</div>
+<div class="tl-title">Medieval India</div>
+<p>Regional cuisines crystallize. Deccan plateau firmly millet-based. South India develops its rice-coconut-curry tradition. North still barley-wheat. Vagbhata's Ashtanga Hridaya (c. 600 CE) emphasizes the six-taste rule. Sushruta's wound-healing barley poultices in active clinical use.</p>
+</div>
+
+<div class="tl-item">
+<div class="tl-date">1200 – 1700 CE</div>
+<div class="tl-title">Sultanate & Mughal period</div>
+<p>Persian and Central Asian influences introduce biryani, kebabs, pulao — <strong>rice cuisine gains royal prestige</strong>. Chilis arrive from the Americas via Portuguese traders (c. 1500 CE — the "fiery" Indian food trope is only 500 years old). Potatoes and tomatoes arrive same route. Tea arrives much later from British.</p>
+</div>
+
+<div class="tl-item">
+<div class="tl-date">1757 – 1947</div>
+<div class="tl-title">Colonial disruption</div>
+<p>British revenue policies prioritize cash crops (indigo, cotton, opium) over food grains. Famines devastate rural India — 1770 Bengal, 1877 Madras, 1943 Bengal (3 million dead). Traditional grain diversity collapses. British promote wheat and rice as "civilized" grains.</p>
+</div>
+
+<div class="tl-item">
+<div class="tl-date">1947 – Present</div>
+<div class="tl-title">Modern India</div>
+<p>Green Revolution (1965-80) makes rice and wheat cheap via fertilizer, irrigation, high-yield varieties. PDS distributes subsidized rice nationally. Millets collapse — millet cultivation drops 80% from 1960 to 2000. Type-2 diabetes rates explode. 2023: UN declares International Year of Millets. <strong>The pendulum starts swinging back.</strong></p>
+</div>
+
+</div>
+
+<div class="dev-sep">॥</div>
+</div>
+
+<!-- FOODS -->
+<div class="sec" id="foods">
+<h2><span class="num">Part I · Chapter 3</span>What actually filled the daily plate</h2>
+
+<p class="lead">A reconstructed view of what a typical pre-1200 AD Indian daily diet looked like — with modern nutritional evidence for each food.</p>
+
+<h3>The grains (Dhanya Varga)</h3>
+
+<div class="grid-2">
+<div class="card">
+<h5>Central to Deccan diet</h5>
+<div class="sans-name">यव · Yava</div>
+<div class="name">Barley</div>
+<p><strong>Charaka's "daily grain."</strong> Modern research confirms: beta-glucan lowers LDL cholesterol 10%, reduces glycemic peaks 50%, cuts gut inflammation 30% in trials.<sup>[5]</sup></p>
+</div>
+
+<div class="card">
+<h5>Telangana heritage grain</h5>
+<div class="sans-name">जोन्न · Jonna</div>
+<div class="name">Sorghum (Jowar)</div>
+<p>Gluten-free, high fiber. Typical serving: 12g protein, 9g fiber vs rice's 4g protein, 0.4g fiber. Daily staple across Andhra and Telangana for centuries.</p>
+</div>
+
+<div class="card">
+<h5>Calcium king</h5>
+<div class="sans-name">रागि · Ragi</div>
+<div class="name">Finger Millet</div>
+<p>344mg calcium per 100g — <strong>highest of any cereal grain</strong>. More than paneer per gram. Low glycemic index, excellent for diabetics. Traditional Telugu <em>sangati</em>.</p>
+</div>
+
+<div class="card">
+<h5>Winter grain</h5>
+<div class="sans-name">बाजरा · Bajra</div>
+<div class="name">Pearl Millet</div>
+<p>High in iron, magnesium, resistant starch. Warming in nature — traditionally eaten in cold months. Dominant in Rajasthan and Gujarat.</p>
+</div>
+
+<div class="card">
+<h5>The small millets</h5>
+<div class="sans-name">कोर्र · Korra / Kodo</div>
+<div class="name">Foxtail & Kodo</div>
+<p>Protein-rich (11-12g per 100g), very low GI. Foxtail millet was a Telugu staple. Now rediscovered as "superfoods" — they were just ordinary food.</p>
+</div>
+
+<div class="card">
+<h5>Northern staple</h5>
+<div class="sans-name">गोधूम · Godhuma</div>
+<div class="name">Wheat</div>
+<p>The other daily grain. Used whole, not as refined maida. Ancient Indian wheat was emmer and einkorn — different from modern high-gluten varieties.</p>
+</div>
+</div>
+
+<h3>The fats (Sneha Varga)</h3>
+
+<div class="grid-2">
+<div class="card">
+<h5>The sacred fat</h5>
+<div class="sans-name">घृत · Ghrita</div>
+<div class="name">Ghee</div>
+<p>Mentioned in nearly every medical context. Contains butyrate (gut health), vitamin K2, fat-soluble A/D/E. Modern research vindicates ancient claims about brain and digestion.</p>
+</div>
+
+<div class="card">
+<h5>Bone-setter's oil</h5>
+<div class="sans-name">तिल तैल · Tila Taila</div>
+<div class="name">Sesame Oil</div>
+<p>Second only to ghee in mentions. High in sesamin (lignan antioxidant). Used for cooking, massage (abhyanga), wound healing in Sushruta.</p>
+</div>
+</div>
+
+<h3>The proteins (Mamsa & Dugdha)</h3>
+
+<p>This is where modern assumptions about "traditional vegetarian India" mostly break down. Most Indians ate <strong>less meat than Westerners but were not vegetarian</strong>. Strict vegetarianism spread with Jainism and later Vaishnava sects. Brahmin vegetarianism solidified around 500-1000 CE in specific regions.</p>
+
+<p>What everyone ate constantly: <strong>dairy</strong>. Milk (dugdha), curd (dadhi), buttermilk (takra), and ghee were not optional — they were daily staples at all social levels. Charaka calls takra "the best after-meal drink."</p>
+
+<div class="grid-3">
+<div class="card">
+<h5>Pulses</h5>
+<div class="sans-name">मुद्ग · Mudga</div>
+<div class="name">Mung Dal</div>
+<p>The "best pulse" per Charaka — easy to digest, tri-doshic. Green mung (whole) was the standard protein.</p>
+</div>
+
+<div class="card">
+<h5>Pulses</h5>
+<div class="sans-name">माष · Masha</div>
+<div class="name">Urad Dal</div>
+<p>Heavy, nourishing, strength-building. Used sparingly.</p>
+</div>
+
+<div class="card">
+<h5>Dairy</h5>
+<div class="sans-name">तक्र · Takra</div>
+<div class="name">Buttermilk</div>
+<p>"Amrita" (nectar) when prepared correctly. Spiced with cumin, salt — exactly like modern Telugu <em>majjiga</em>.</p>
+</div>
+</div>
+
+<h3>The sweeteners and ferments</h3>
+
+<p>White sugar didn't exist. Sweetness came from three traditional sources, none of which cause modern metabolic damage at moderate intake:</p>
+
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>Name</th><th>Source</th><th>Modern equivalent</th></tr></thead>
+<tbody>
+<tr><td><span class="sans">मधु</span> <em>Madhu</em></td><td>Honey</td><td>Raw unprocessed honey</td></tr>
+<tr><td><span class="sans">गुड</span> <em>Gud</em></td><td>Jaggery (unrefined cane)</td><td>Jaggery</td></tr>
+<tr><td><span class="sans">ताडरस</span> <em>Thalarasa</em></td><td>Palm juice</td><td>Palm sugar, neera</td></tr>
+<tr><td><span class="sans">इक्षुरस</span> <em>Ikshurasa</em></td><td>Sugarcane juice</td><td>Sugarcane juice</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Fermentation was everywhere: <em>sura</em> (grain wine), <em>arishta</em> (herbal wine), buttermilk, <em>dosa-idli</em> batters, pickles (<em>achar</em>). Gut microbiome research is now validating why fermented foods matter.</p>
+
+<div class="dev-sep">॥</div>
+</div>
+
+<!-- PROTEIN -->
+<div class="sec" id="protein">
+<h2><span class="num">Part I · Chapter 4</span>The whey & soya question</h2>
+
+<p class="lead">If pre-1200 AD India had no protein powders, no soya chunks, no isolated whey — how did wrestlers, warriors, and physically demanding laborers actually hit their protein numbers? The answer reveals something modern Indian diets have lost.</p>
+
+<h3>The "whey equivalent" — actual whey, just not isolated</h3>
+
+<p>Ironically, <strong>whey itself is ancient</strong>. When milk was set into curd, the watery liquid that separated was called <span class="sans">मस्तु</span> (<em>Mastu</em>) in Sanskrit — literally the whey. Charaka and Sushruta both describe it as light, easy to digest, and good for recovery. Same biological substance you drink today, just not concentrated to 80% protein.</p>
+
+<p>Closer in spirit to a modern post-workout shake was <strong>kilāṭa</strong> <span class="sans">(किलाट)</span> — fresh cheese with the whey water consumed together, sometimes sweetened with honey. Plus straight-up <em>dadhi</em> (curd) and <em>takra</em> (buttermilk). Curd is high in casein, which is actually <strong>slower-absorbing than whey</strong> and arguably better for muscle preservation overnight.</p>
+
+<div class="pull">
+"Mastu (whey) is light, increases appetite, cleanses the channels (srotas), and is recommended after meals as a digestive aid. It carries the essence of milk in a form easy for the body to absorb."
+<span class="cite">Sushruta Samhita, Sutrasthana 45</span>
+</div>
+
+<h3>The actual protein powerhouse: dairy in volume</h3>
+
+<p>The classical strength-builder food wasn't a single supplement — it was the cumulative effect of <strong>dairy at every meal, plus pulses</strong>. A typical strength-training Brahmin or Kshatriya day stacked these foods to easily reach 100-120g protein:</p>
+
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>Food</th><th>Typical serving</th><th>Protein</th><th>Modern note</th></tr></thead>
+<tbody>
+<tr><td><strong>Paneer</strong> (chhena)</td><td>100g</td><td><strong>18-20g</strong></td><td>Same as today, often homemade fresh</td></tr>
+<tr><td><strong>Whole milk</strong> (dugdha)</td><td>250ml</td><td>8g</td><td>A2-type cows, raw, full fat</td></tr>
+<tr><td><strong>Curd</strong> (dadhi)</td><td>250g</td><td>11g</td><td>Set fresh daily</td></tr>
+<tr><td><strong>Mung dal</strong> (mudga)</td><td>50g dry / 150g cooked</td><td>12g</td><td>Charaka's "best pulse"</td></tr>
+<tr><td><strong>Sesame</strong> (tila)</td><td>30g</td><td>6g</td><td>Ladoos, cooking oil base</td></tr>
+<tr><td><strong>Chana</strong> (chickpea)</td><td>50g dry / 150g cooked</td><td>11g</td><td>Sprouted or cooked</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Combined: 500ml milk + 200g paneer + 200g curd + dal + chana + sesame ladoo = <strong>easily 100-120g protein per day</strong>. They didn't need powders because they ate dairy in volume — multiple servings, every single meal. Modern Indians eat 1-2 servings of dairy a day; ancient Indians ate 5-6.</p>
+
+<h3>The soya equivalent — there wasn't one</h3>
+
+<p>Soya is genuinely modern in Indian diets. It came from East Asia and was barely consumed in the subcontinent before the 1900s. <strong>Pre-1200 AD India had no soya, no tofu, no tempeh, no soy milk.</strong></p>
+
+<p>Their high-protein plant foods were instead concentrated pulses, seeds, and sprouts:</p>
+
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>Ancient food</th><th>Sanskrit</th><th>Protein per 100g dry</th><th>Modern note</th></tr></thead>
+<tbody>
+<tr><td><strong>Mung beans</strong> (whole)</td><td>Mudga</td><td>24g</td><td>Charaka's top-rated pulse</td></tr>
+<tr><td><strong>Urad dal</strong></td><td>Masha</td><td>25g</td><td>"Heavy, strength-building"</td></tr>
+<tr><td><strong>Toor dal</strong></td><td>Adhaki</td><td>22g</td><td>Daily dal in many regions</td></tr>
+<tr><td><strong>Chana</strong> (chickpea)</td><td>Chanaka</td><td>19g</td><td>Roasted as snack, soaked or cooked</td></tr>
+<tr><td><strong>Sesame</strong></td><td>Tila</td><td>18g</td><td>Used in nearly every meal context</td></tr>
+<tr><td><strong>Hemp seeds</strong></td><td>Bhanga</td><td>31g</td><td>Mentioned in texts, less common</td></tr>
+<tr><td><strong>Lotus seeds</strong> (makhana)</td><td>Padmabija</td><td>9g</td><td>Snack and medicinal use</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Notice mung dal at <strong>24g protein per 100g dry</strong> is actually higher than soya chunks per gram of dry weight. The difference is volume — 100g dry soya rehydrates into a meaty 300g serving while 100g dry mung becomes ~250g cooked. Soya feels more "filling" per gram of protein, but on a pure macro basis, dal wins.</p>
+
+<div class="stat-band">
+<div class="stat-grid">
+<div><div class="num">5-6×</div><div class="lbl">Daily dairy servings in pre-1200 AD diet</div></div>
+<div><div class="num">1900s</div><div class="lbl">When soya entered Indian kitchens</div></div>
+<div><div class="num">100g+</div><div class="lbl">Protein hit by warriors without supplements</div></div>
+</div>
+</div>
+
+<h3>The ancient strength shake</h3>
+
+<p>The closest pre-1200 AD equivalent to a modern protein shake is something a wrestler in 800 AD might eat after wrestling practice (gymnasiums called <em>vyayamashalas</em> existed):</p>
+
+<div class="card" style="margin:1.3rem 0">
+<h5>The Pehlwan's recovery bowl</h5>
+<div class="sans-name">पुष्टि क्षीर</div>
+<div class="name">Pushti Ksheer (Strength Milk)</div>
+<p style="margin-bottom:.6rem">250ml whole milk · 30g paneer crumbled in · 1 tbsp ghee · 1 tbsp jaggery · 30g mixed almonds, walnuts, sesame · 30g sprouted mung beans, lightly mashed</p>
+<p style="font-size:.85rem;color:var(--mut);font-style:italic">~450 kcal · <strong style="color:var(--accent)">30g protein</strong> · ~25g fat · ~25g carbs</p>
+</div>
+
+<p>That's a modern protein shake in whole-food form. The wrestlers of the Mauryan era and the akhara traditions ate exactly this kind of thing. No isolation, no extraction, no marketing. Just calorie-dense, protein-dense, micronutrient-rich whole food.</p>
+
+<h3>The real lesson</h3>
+
+<p>Ancient Indians hit 100g+ protein effortlessly because <strong>dairy was abundant and dal was a daily staple at every meal — not just dinner</strong>. Modern Indians struggle to hit 60g because dairy got vilified (low-fat era) and dals became side dishes instead of mains.</p>
+
+<p>A modern plan with <strong>paneer + dal + curd + milk + soya</strong> is actually closer to ancestral eating than most current Indian diets. The soya is a 20th-century shortcut — convenient and effective, but not "traditional." A fully ancestral protein day would replace soya dinners with <strong>sprouted mung salad + paneer</strong>, hitting the same numbers via 2000-year-old foods.</p>
+
+<div class="pull">
+The supplement industry exists because we abandoned dairy and dals. Reverse the abandonment, and most supplements become unnecessary. Whey isolate is a useful tool, not a missing nutrient our ancestors lacked.
+</div>
+
+<h3>If you want to go fully ancestral</h3>
+
+<div class="grid-2">
+<div class="card">
+<h5>Replace whey shake</h5>
+<div class="name">Mastu + paneer</div>
+<p>250ml warm whole milk + 30g fresh crumbled paneer + 1 tsp jaggery + pinch cardamom. Drink slowly. ~25g protein, complete amino acid profile, casein-dominant for slow release.</p>
+</div>
+<div class="card">
+<h5>Replace soya dinner</h5>
+<div class="name">Sprouted mung + paneer salad</div>
+<p>150g sprouted mung + 80g paneer cubes + onion + tomato + lemon + chaat masala + roasted cumin powder. Air-fry paneer first if desired. ~28g protein, more fiber than soya, no anti-nutrients.</p>
+</div>
+</div>
+
+<div class="dev-sep">॥</div>
+</div>
+
+<!-- NAVA DHANYA -->
+<div class="sec" id="navadhanya">
+<h2><span class="num">Part I · Chapter 5</span>Nava Dhanya — the nine-grain rotation</h2>
+
+<p class="lead">A 2500-year-old ritual system that simultaneously achieved a complete weekly amino acid profile, micronutrient diversity, planetary symbolism, and seasonal harvest alignment. Religion, in this case, was nutrition delivered through habit and festival.</p>
+
+<h3>The concept</h3>
+
+<p><span class="sans">नवधान्य</span> — <em>Nava</em> (nine) + <em>Dhanya</em> (grain). A ritual offering of nine specific grains, each associated with one of the nine planets (<em>Navagraha</em>) and one day of the week. Mentioned in the Brihat Parashara Hora Shastra, several Puranas, the Grihya Sutras, and Ayurvedic compilations across roughly 800 BCE to 900 CE.</p>
+
+<p>What makes this striking: the nine-grain list, when followed across a week, produces <strong>complete amino acid coverage, full micronutrient diversity, and balanced macronutrients</strong> — without anyone in the period understanding the concept of an amino acid.</p>
+
+<div class="pull">
+The "festival special meal" was simultaneously the most nutritionally complete meal of the year. The "daily grain for your planetary day" was simultaneously a weekly nutritional rotation system.
+</div>
+
+<h3>The nine grains and their planetary associations</h3>
+
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>Day</th><th>Grain</th><th>Sanskrit</th><th>Planet</th></tr></thead>
+<tbody>
+<tr><td>Sunday</td><td><strong>Wheat</strong></td><td>Godhuma</td><td>Sun (Surya)</td></tr>
+<tr><td>Monday</td><td><strong>Rice</strong></td><td>Vrihi</td><td>Moon (Chandra)</td></tr>
+<tr><td>Tuesday</td><td><strong>Toor dal</strong></td><td>Adhaki</td><td>Mars (Mangal)</td></tr>
+<tr><td>Wednesday</td><td><strong>Mung dal</strong></td><td>Mudga</td><td>Mercury (Budha)</td></tr>
+<tr><td>Thursday</td><td><strong>Chana</strong></td><td>Chanaka</td><td>Jupiter (Brihaspati)</td></tr>
+<tr><td>Friday</td><td><strong>White beans</strong> (mochai)</td><td>Nishpava</td><td>Venus (Shukra)</td></tr>
+<tr><td>Saturday</td><td><strong>Sesame</strong></td><td>Tila</td><td>Saturn (Shani)</td></tr>
+<tr><td>—</td><td><strong>Urad (black gram)</strong></td><td>Masha</td><td>Rahu</td></tr>
+<tr><td>—</td><td><strong>Kulthi (horse gram)</strong></td><td>Kulattha</td><td>Ketu</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Why this is biochemically remarkable</h3>
+
+<p>The Nava Dhanya list is essentially <strong>a complete amino acid profile distributed across nine foods</strong>. Looking at what each contributes:</p>
+
+<div class="grid-2">
+<div class="card">
+<h5>Two cereals</h5>
+<div class="name">Wheat & Rice</div>
+<p>Provide <strong>methionine</strong> (deficient in pulses). Energy via complex carbs. B vitamins. Wheat adds zinc and selenium; rice adds easy digestibility.</p>
+</div>
+
+<div class="card">
+<h5>Five pulses</h5>
+<div class="name">Toor, Mung, Chana, Mochai, Urad</div>
+<p>Provide <strong>lysine</strong> (deficient in cereals). Plant protein density. Iron, folate, fiber. Each has a slightly different profile — toor for tryptophan, mung for digestibility, chana for protein density.</p>
+</div>
+
+<div class="card">
+<h5>One seed</h5>
+<div class="name">Sesame (Tila)</div>
+<p>Uniquely contains <strong>both</strong> methionine AND lysine in good amounts. Plus tryptophan. Plus calcium (more per gram than milk). Plus healthy fats and lignans. The "bridge" food connecting cereals and pulses.</p>
+</div>
+
+<div class="card">
+<h5>One minor pulse</h5>
+<div class="name">Kulthi (Horse Gram)</div>
+<p>Exceptionally high in iron — more than spinach gram-for-gram. Charaka prescribed it specifically for kidney stones, weight loss, and post-illness recovery. Modern research confirms most of these uses.</p>
+</div>
+</div>
+
+<h3>The ritual was the delivery system</h3>
+
+<p>Nava Dhanya wasn't an abstract list. It was offered in:</p>
+
+<ul>
+<li><strong>Navagraha homam</strong> — fire ritual addressing the nine planets, one grain per planet</li>
+<li><strong>House-warming (Griha Pravesh)</strong> — nine grains placed at the entrance representing prosperity</li>
+<li><strong>Sankranti and harvest festivals</strong> — especially in Tamil Nadu, Karnataka, Andhra Pradesh, Telangana</li>
+<li><strong>Funeral and ancestor rites</strong> — offered to ancestors as complete sustenance</li>
+<li><strong>Daily worship in some traditions</strong> — small offerings of all nine grains</li>
+</ul>
+
+<p>Critically, what was offered in ritual was meant to be <strong>eaten by the family afterward as <em>prasad</em></strong>. The religious ritual was simultaneously a nutrition delivery mechanism. The planetary association ensured weekly variety. The festival association ensured seasonal harvest connection. The ancestor association ensured generational transmission.</p>
+
+<div class="pull">
+A child raised in a household practicing Nava Dhanya rituals would, over a lifetime, consume an unusually diverse and amino-acid-complete grain rotation — without anyone in the family ever needing to read a medical text or understand biochemistry. The system encoded itself.
+</div>
+
+<h3>The Pongal connection</h3>
+
+<p>If you grew up in a Telugu, Tamil, or Kannada household, you've already eaten Nava-Dhanya-aligned food without knowing it. <strong>Pongal</strong> — the festival dish itself — is a Nava-Dhanya-aligned recipe:</p>
+
+<div class="card" style="margin:1.3rem 0">
+<h5>Sankranti / Pongal</h5>
+<div class="sans-name">पोङ्गल</div>
+<div class="name">The harvest festival meal</div>
+<p style="margin-bottom:.6rem"><strong>Sweet Pongal:</strong> rice + moong dal + jaggery + ghee + cardamom + cashew<br>
+<strong>Khara Pongal:</strong> rice + moong dal + ghee + black pepper + cumin + ginger + cashew<br>
+<strong>Sesame ladoos (tilgul):</strong> sesame + jaggery, eaten in Maharashtra and Karnataka on the same day</p>
+<p style="font-size:.88rem;color:var(--mut);font-style:italic">Together: complete amino acid profile, calcium from sesame, iron from jaggery, healthy fats from ghee. The body's nutritional reset before the cold season ends.</p>
+</div>
+
+<p>The "festive special meal" was actually the <strong>most nutritionally complete meal of the year</strong>. It wasn't celebrated as nutrition. It was celebrated as harvest. The nutrition was just embedded in the celebration.</p>
+
+<h3>The weekly rotation as modern practice</h3>
+
+<p>If you wanted to follow Nava Dhanya principles today as a practical weekly grain rotation, the framework gives you something modern nutrition is still struggling to systematize: <strong>a built-in food diversity prescription</strong>.</p>
+
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>Day</th><th>Featured grain/pulse</th><th>Practical dishes</th></tr></thead>
+<tbody>
+<tr><td><strong>Sun</strong></td><td>Wheat (whole)</td><td>Daliya, broken wheat upma, atta roti, wheat porridge</td></tr>
+<tr><td><strong>Mon</strong></td><td>Rice + dal</td><td>Khichdi, curd rice, plain rice with dal</td></tr>
+<tr><td><strong>Tue</strong></td><td>Toor dal</td><td>Sambar, plain tomato dal, dal-rice</td></tr>
+<tr><td><strong>Wed</strong></td><td>Mung dal</td><td>Khichdi, mung dal cheela, sprouted mung salad</td></tr>
+<tr><td><strong>Thu</strong></td><td>Chana</td><td>Chole, sprouted chana, besan dishes (cheela, kadhi)</td></tr>
+<tr><td><strong>Fri</strong></td><td>White beans / mochai</td><td>Field bean curry, lobia (black-eyed peas)</td></tr>
+<tr><td><strong>Sat</strong></td><td>Sesame</td><td>Tila ladoo, til chutney, gingelly oil cooking, sesame on roti</td></tr>
+<tr><td><strong>+</strong></td><td>Urad</td><td>Idli, dosa, vada — anytime in week</td></tr>
+<tr><td><strong>+</strong></td><td>Kulthi (horse gram)</td><td>Kulthi rasam, sprouts, soup — once a week</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>This is essentially what regional Indian cuisines naturally rotated through before urbanization standardized everyone's diet to rice-and-wheat. It's also exactly the kind of food diversity rotation modern nutritionists recommend — without naming it Nava Dhanya, because the modern recommendation doesn't know it's repeating a 2500-year-old framework.</p>
+
+<h3>The Charaka link</h3>
+
+<p>Charaka explicitly mentions every one of the nine grains in his Annapana Vidhi (Sutrasthana Ch. 27). He classifies them, describes their properties (sweet/heavy/light/dry), and prescribes specific combinations. The Nava Dhanya tradition is essentially <strong>a folk-religious encoding of Charaka's more technical dietary classifications</strong> — making the nutrition rotation accessible through ritual, calendar, and festival rather than requiring people to read medical texts.</p>
+
+<p>In other words: religion was nutrition delivered through habit. The Brahmin priest performing a Navagraha homam in 800 CE was, without knowing it, running a public health intervention disguised as a fire ritual. The grandmother teaching her daughter-in-law which grain to cook on which day was transmitting biochemistry through tradition.</p>
+
+<div class="pull">
+"<em>Aushadhasaman annam</em>" — food is medicine equivalent. The phrase appears repeatedly in classical Ayurveda. Nava Dhanya was the practical embodiment of this principle, encoded into ritual so the message could survive without the science.
+</div>
+
+<h3>What modern Indians lost</h3>
+
+<p>When urbanization, industrialization, and the Green Revolution standardized Indian diets to refined rice and wheat, what got abandoned wasn't just specific grains — it was the <strong>rotation principle itself</strong>. The implicit folk-knowledge that "this day, this grain" carried nutritional logic was discarded along with the rituals.</p>
+
+<p>Modern Indians eat the same two grains (rice, wheat) seven days a week. Vegetarians who think they're eating "Indian food" have been eating a 1960s-onward simplification of a once-vastly-more-diverse system. The nutritional consequences — covered in the Modern Disease chapter — were predictable.</p>
+
+<p>The fix isn't religious revival. It's grain rotation. Whether you connect Wednesday's mung dal to Mercury or just eat it because the body benefits from variety — the nutrition works either way. The wisdom encoded the variety. The variety did the nutrition.</p>
+
+<div class="dev-sep">॥</div>
+</div>
+
+<!-- PRINCIPLES -->
+<div class="sec" id="principles">
+<h2><span class="num">Part II</span>Eating principles that hold up</h2>
+
+<p class="lead">These aren't romantic notions. Each of the following principles from pre-1200 AD Indian thought has been validated — sometimes dramatically — by modern nutrition and circadian science.</p>
+
+<div class="principle">
+<div class="pn">PRINCIPLE ONE</div>
+<h4>Eat with the sun</h4>
+<p>The largest meal at midday, when <em>Jatharagni</em> (digestive fire) is strongest. A light dinner before sunset. Modern evidence: insulin sensitivity peaks around noon and crashes after 6 PM. Late-night eaters have worse glucose control even at the same calorie count.<sup>[6]</sup></p>
+</div>
+
+<div class="principle">
+<div class="pn">PRINCIPLE TWO</div>
+<h4>Six tastes in every meal (Shadrasa)</h4>
+<p>Sweet (madhura), sour (amla), salty (lavana), pungent (katu), bitter (tikta), astringent (kashaya). Modern translation: phytonutrient diversity. Each taste category corresponds to distinct bioactive compound classes — polyphenols, glucosinolates, tannins, capsaicinoids, flavonoids.</p>
+<p>Most modern diets hit sweet, salty, and sometimes sour. The missing three — bitter (methi, karela), pungent (ginger, chili), astringent (turmeric, pomegranate) — are exactly the phytochemical-rich foods modern research keeps discovering benefits in.</p>
+</div>
+
+<div class="principle">
+<div class="pn">PRINCIPLE THREE</div>
+<h4>Seasonal eating (Ritucharya)</h4>
+<p>Heating foods in winter, cooling foods in summer, specific protocols for each of six seasons. Modern evidence: immunity, metabolism, and gut flora all shift seasonally. Eating a mango in December in Delhi is genuinely worse for you than eating it in April.</p>
+<p>Sushruta's Sutra 6 gives detailed seasonal food lists — dry, cooling foods in autumn; warm, oily, heavy foods in winter; light, cool foods in summer.</p>
+</div>
+
+<div class="principle">
+<div class="pn">PRINCIPLE FOUR</div>
+<h4>Fasting as reset</h4>
+<p>Ekadashi (twice monthly), festival fasts, seasonal fasts. Not punishment — systematic metabolic resets. Modern intermittent fasting research validates: 16-24 hour fasts trigger autophagy, improve insulin sensitivity, reduce inflammation.</p>
+<p>One day of fasting every two weeks is essentially what modern 16:8 advocates recommend at higher frequency. Ancient Indians arrived at this through observation, not biochemistry.</p>
+</div>
+
+<div class="principle">
+<div class="pn">PRINCIPLE FIVE</div>
+<h4>Food incompatibilities (Viruddhahara)</h4>
+<p>Fish + milk. Honey + hot water. Milk + sour fruit. Some of these have biochemical explanations (casein-tannin binding, histamine reactions). Others remain unproven. The principle — that combinations matter, not just individual foods — is sound even where specific rules may be folk wisdom.</p>
+</div>
+
+<div class="principle">
+<div class="pn">PRINCIPLE SIX</div>
+<h4>Food for body type (Prakriti)</h4>
+<p>Same food affects different people differently. Vata types need grounding, oily foods. Pitta types need cooling, mild foods. Kapha types need light, dry, warming foods. Modern translation: metabolic typing, personalized nutrition, microbiome individuality.</p>
+<p>Nutrigenomics is basically rediscovering this. The specifics of Ayurvedic typing haven't been rigorously validated, but the underlying insight — <em>one diet doesn't fit all</em> — is increasingly central to nutrition science.</p>
+</div>
+
+<div class="principle">
+<div class="pn">PRINCIPLE SEVEN</div>
+<h4>Eat in tranquility, not distraction</h4>
+<p>Charaka: eat in a clean place, with attention, in a pleasant mental state, neither too fast nor too slow. Modern parallel: mindful eating reduces portion size 20%, improves satiety signals, reduces post-meal glucose spikes. Eating while scrolling is a modern pathology.</p>
+</div>
+
+<div class="principle">
+<div class="pn">PRINCIPLE EIGHT</div>
+<h4>Buttermilk after meals (Takra)</h4>
+<p>Standard practice. Probiotics for gut flora, aids digestion, contains calcium and protein. <em>Majjiga</em> with lunch is a 2000-year-old practice. Modern dairy-free diets actively fight something that works.</p>
+</div>
+
+<div class="pull">
+"Diet has been described as one of the three pillars (<em>traya upasthambhas</em>) of life. Not alongside exercise and medicine, but foundational to both."
+<span class="cite">Kasyapa Samhita</span>
+</div>
+</div>
+
+<!-- HERBS -->
+<div class="sec" id="herbs">
+<h2><span class="num">Part II · Addendum</span>Herbs and Rasayanas — what's legit</h2>
+
+<p class="lead">Ancient Indians used specific herbs in specific ways. Modern research has validated some strongly, others weakly, and many not at all. Here's an honest scorecard.</p>
+
+<h3>Strong modern evidence</h3>
+
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>Herb</th><th>Traditional use</th><th>Modern evidence</th></tr></thead>
+<tbody>
+<tr><td><strong>Ashwagandha</strong></td><td>Rasayana, strength, sleep, stress</td><td><strong>Strong.</strong> Multiple RCTs show 20-30% cortisol reduction, improved sleep quality, modest testosterone increase. KSM-66 extract at 600mg most studied.</td></tr>
+<tr><td><strong>Turmeric</strong></td><td>Anti-inflammatory, wound healing</td><td><strong>Strong.</strong> Curcumin shown effective for inflammation, joint pain, some cancers. Bioavailability requires piperine (black pepper) — ancient cooking already paired them.</td></tr>
+<tr><td><strong>Amla</strong></td><td>Rasayana, longevity, eye health</td><td><strong>Strong.</strong> Highest natural vitamin C content of any fruit. Multiple studies confirm antioxidant, liver-protective, lipid-lowering effects.</td></tr>
+<tr><td><strong>Tulsi</strong></td><td>Adaptogen, respiratory, immunity</td><td><strong>Growing.</strong> RCTs show cortisol reduction, blood sugar improvement, modest immune effects.</td></tr>
+<tr><td><strong>Triphala</strong></td><td>Digestion, detox, eye health</td><td><strong>Moderate.</strong> Trials show improvements in constipation, gut microbiome, oral health, and lipid profiles.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Moderate or emerging evidence</h3>
+
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>Herb</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td><strong>Brahmi</strong> (Bacopa)</td><td>Memory, cognition — some RCT support but modest effects</td></tr>
+<tr><td><strong>Shatavari</strong></td><td>Women's health — traditional use, limited modern trials</td></tr>
+<tr><td><strong>Guduchi</strong> (Giloy)</td><td>Immunity, diabetes — emerging research, some concerns about liver toxicity in processed forms</td></tr>
+<tr><td><strong>Shilajit</strong></td><td>Energy, fertility — mineral-rich, but contamination concerns with commercial products</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Weak evidence or buyer-beware</h3>
+
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>Product</th><th>Why to be cautious</th></tr></thead>
+<tbody>
+<tr><td><strong>Gokshura</strong> (Tribulus)</td><td>Marketed as testosterone booster — no solid evidence in healthy young men</td></tr>
+<tr><td><strong>Mucuna pruriens</strong></td><td>Contains L-Dopa (Parkinson's drug precursor). Real biological effect, but not something to take casually daily without reason.</td></tr>
+<tr><td><strong>Bhasmas</strong> (Swarna, Abhrak)</td><td>Traditional metallic ash preparations. Require weeks of purification (<em>shodhana</em>). Modern commercial products frequently fail heavy metal testing — lead, arsenic, mercury contamination documented by WHO and AIIMS studies.</td></tr>
+<tr><td><strong>Proprietary blends</strong></td><td>Multiple ingredients, unstandardized doses, no third-party testing. Avoid. Single-ingredient, standardized extracts only.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="pull">
+Rule of thumb: <em>single ingredient, known dose, third-party tested, human studies at the labeled dose</em>. This filter eliminates 90% of the supplement market.
+</div>
+
+<h3>The ghee question</h3>
+
+<p>Charaka Samhita describes ghee as <em>medhya</em> (brain-nourishing), <em>vrishya</em> (aphrodisiac), <em>rasayana</em> (rejuvenating). For decades, Western medicine demonized saturated fat. Modern research now vindicates ancient glorification:</p>
+
+<ul>
+<li>High in butyrate — the short-chain fatty acid that feeds gut cells and reduces inflammation</li>
+<li>Vitamin K2 — critical for cardiovascular health, often deficient in vegetarian diets</li>
+<li>Stable at high temperatures — doesn't form trans fats or toxic aldehydes like refined seed oils</li>
+<li>Contains conjugated linoleic acid (CLA) — linked to improved body composition</li>
+</ul>
+
+<p>The Indian grandmother putting ghee on rotis was right. The 1990s cardiologist who replaced it with refined oil was wrong. 1 tsp ghee per meal is an evidence-based choice, not a nostalgic one.</p>
+</div>
+
+<!-- MEAL INTEGRATION -->
+<div class="sec" id="meals">
+<h2><span class="num">Part III</span>Integration into a modern weekly plan</h2>
+
+<p class="lead">The goal isn't to throw out a modern diet and eat like a 10th-century monk. It's to take three specific ancient-Indian principles and apply them to an existing plan for measurably better results.</p>
+
+<h3>Three integrations</h3>
+
+<div class="grid-3">
+<div class="card">
+<h5>Integration One</h5>
+<div class="name">Two millet lunches</div>
+<p>Replace rice with millet on 2 days per week. More protein, more fiber, lower GI. Telugu heritage grain.</p>
+</div>
+
+<div class="card">
+<h5>Integration Two</h5>
+<div class="name">Six-taste check</div>
+<p>Ensure every lunch has sweet, sour, salty, pungent, bitter, astringent. Usually means adding pickle + curd + methi/amla.</p>
+</div>
+
+<div class="card">
+<h5>Integration Three</h5>
+<div class="name">Ekadashi fast</div>
+<p>One light-eating day every two weeks. Fits a Sunday rest day perfectly. 16-hour fast from Saturday dinner to Sunday lunch.</p>
+</div>
+</div>
+
+<h3>The millet swaps</h3>
+
+<p>These swaps preserve protein and calorie targets while adding the ancestral grains our bodies are genetically adapted to.</p>
+
+<div class="meals-block">
+
+<div class="meal-row">
+<div class="meal-day">Tuesday</div>
+<div class="meal-current">Bhindi-peanut fry + <strong>150g white rice</strong> + curd</div>
+<div class="meal-new">Bhindi-peanut fry + <strong>2 jonna rotte (90g)</strong> + curd<br><span style="font-size:.78rem;color:var(--mut);font-style:italic">+6g protein, +5g fiber, -30 kcal</span></div>
+</div>
+
+<div class="meal-row">
+<div class="meal-day">Thursday</div>
+<div class="meal-current">Palak dal + <strong>150g white rice</strong> + curd</div>
+<div class="meal-new">Palak dal + <strong>ragi sangati (100g)</strong> + curd<br><span style="font-size:.78rem;color:var(--mut);font-style:italic">+4g protein, +6g fiber, +200mg calcium</span></div>
+</div>
+
+<div class="meal-row">
+<div class="meal-day">Saturday</div>
+<div class="meal-current">Mushroom pulao with <strong>90g basmati rice</strong></div>
+<div class="meal-new">Mushroom <strong>korra annam (90g foxtail millet)</strong><br><span style="font-size:.78rem;color:var(--mut);font-style:italic">+5g protein, lower GI, same cooking method</span></div>
+</div>
+
+</div>
+
+<h3>How to prepare</h3>
+
+<div class="grid-2">
+<div class="card">
+<h5>Tuesday</h5>
+<div class="sans-name">जोन्न रोट्टे</div>
+<div class="name">Jonna Rotte (Sorghum roti)</div>
+<p>Mix 90g jonna flour with hot water + salt. Knead smooth. Pat into 2 small discs. Cook on tawa, flip, press with cloth to puff. 8 min total. Serve with bhindi-peanut fry + curd.</p>
+</div>
+
+<div class="card">
+<h5>Thursday</h5>
+<div class="sans-name">रागि सन्गटि</div>
+<div class="name">Ragi Sangati</div>
+<p>Boil 100g ragi flour with water + pinch salt, stirring constantly, till thick paste. Shape into ball. Eat with palak dal — dip ball into dal, swallow without chewing (traditional way). Very filling.</p>
+</div>
+
+<div class="card">
+<h5>Saturday</h5>
+<div class="sans-name">कोर्र अन्नम्</div>
+<div class="name">Korra Annam (Foxtail millet rice)</div>
+<p>Cook 90g foxtail millet exactly like rice (1:2.5 ratio water). Pressure cook 2 whistles. Use as the rice in your mushroom pulao — same recipe, just swap the grain.</p>
+</div>
+
+<div class="card">
+<h5>Where to buy</h5>
+<div class="name">Sources in India</div>
+<p><strong>Blinkit / Amazon Fresh:</strong> Ragi flour (Tata Sampann), foxtail millet. <strong>Local grocery:</strong> Jonna flour is fresher locally — any Telugu grocery store will stock it.</p>
+</div>
+</div>
+
+<h3>The six-taste upgrade</h3>
+
+<p>Most modern plans cover four of the six tastes:</p>
+
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>Taste</th><th>Commonly present</th><th>Upgrade</th></tr></thead>
+<tbody>
+<tr><td>Sweet (madhura)</td><td>✓ Rice, milk, yogurt</td><td>Good</td></tr>
+<tr><td>Salty (lavana)</td><td>✓ In curries</td><td>Good</td></tr>
+<tr><td>Sour (amla)</td><td>✓ Curd, lemon</td><td>Good</td></tr>
+<tr><td>Pungent (katu)</td><td>✓ Chili, pepper, ginger</td><td>Good</td></tr>
+<tr><td><strong>Bitter (tikta)</strong></td><td>✗ Rarely</td><td><strong>Add methi leaves to dal weekly. Karela once a week.</strong></td></tr>
+<tr><td><strong>Astringent (kashaya)</strong></td><td>✗ Rarely</td><td><strong>Add 1 amla murabba daily OR pomegranate 2x/week.</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>The Ekadashi-inspired fast</h3>
+
+<p>Not religious — metabolic. Every other Sunday:</p>
+
+<ul>
+<li><strong>Saturday dinner at 8 PM</strong> — your normal meal</li>
+<li><strong>Sunday skip breakfast</strong> — coffee/tea without sugar is fine, lots of water</li>
+<li><strong>Sunday lunch at 12 PM</strong> — break the fast (16 hours)</li>
+<li><strong>Sunday dinner light</strong> — skip or just fruit + milk</li>
+</ul>
+
+<p>This gives a 16-24 hour fasting window twice monthly. Aligns with Ekadashi tradition. Gives the digestive system a reset. Modern intermittent fasting research shows measurable benefits at this frequency.</p>
+
+<div class="stat-band">
+<div class="stat-grid">
+<div><div class="num">+15g</div><div class="lbl">Extra protein per week from millet swaps</div></div>
+<div><div class="num">+17g</div><div class="lbl">Extra fiber per week</div></div>
+<div><div class="num">2×</div><div class="lbl">Fasting days monthly — metabolic reset</div></div>
+</div>
+</div>
+
+<p style="margin-top:1.8rem">These integrations cost nothing, take no extra time, and align the diet with what great-great-grandparents in Telangana actually ate. More protein, more fiber, better blood sugar control, and more phytonutrient diversity — without removing anything you currently enjoy.</p>
+
+<div class="dev-sep">॥ इति समाप्तम् ॥</div>
+</div>
+
+<!-- MODERN DISEASE -->
+<div class="sec" id="modern">
+<h2><span class="num">Part IV</span>Modern disease, ancient solution</h2>
+
+<p class="lead">Hypothyroidism, PCOS, low testosterone, fatty liver, type-2 diabetes — India's epidemic of metabolic and hormonal disease isn't random. It tracks almost perfectly with the post-1960s departure from traditional eating. The connection between what the previous chapters described and what's happening in modern Indian bodies is more direct than most realize.</p>
+
+<h3>The hard data</h3>
+
+<div class="stat-band">
+<div class="stat-grid">
+<div><div class="num">42M</div><div class="lbl">Indians with thyroid disorders today</div></div>
+<div><div class="num">15-20%</div><div class="lbl">Urban Indian women with hypothyroidism</div></div>
+<div><div class="num">1 in 5</div><div class="lbl">Indian women of reproductive age with PCOS</div></div>
+</div>
+</div>
+
+<div class="stat-band" style="margin-top:.5rem">
+<div class="stat-grid">
+<div><div class="num">5.5×</div><div class="lbl">Increase in T2 diabetes since 1970</div></div>
+<div><div class="num">-50%</div><div class="lbl">Indian male sperm count vs 1980</div></div>
+<div><div class="num">~1%/yr</div><div class="lbl">Global testosterone decline since 1980s</div></div>
+</div>
+</div>
+
+<p>None of these started randomly. They started together, in the same time window, in the same populations — coinciding with five specific dietary and lifestyle shifts.</p>
+
+<h3>Five dietary shifts driving the epidemic</h3>
+
+<div class="principle">
+<div class="pn">SHIFT ONE</div>
+<h4>Refined seed oils replaced ghee</h4>
+<p>Sundrop, Saffola, Fortune, Dalda became default cooking media in the 1980s-90s, marketed as "heart healthy." They are industrially extracted with hexane, oxidize easily, and are 70-80% omega-6 polyunsaturated. The omega-6:omega-3 ratio in modern Indian diets is now 30:1, against the ancestral 1:1 to 4:1.</p>
+<p>Chronic excess omega-6 drives systemic inflammation, which directly impacts thyroid function (the thyroid is exquisitely inflammation-sensitive), insulin resistance, and hormone synthesis. Ghee, mustard oil, sesame oil, and coconut oil — which Indians ate for millennia — don't cause this.</p>
+</div>
+
+<div class="principle">
+<div class="pn">SHIFT TWO</div>
+<h4>Whole grains became refined</h4>
+<p>Whole wheat became maida. Brown rice became polished white. Millets disappeared. The result: rapid glucose spikes that demand constant insulin response. Over years, this leads to insulin resistance — the upstream driver of <strong>PCOS in women, low testosterone in men, hypothyroidism, fatty liver, and type-2 diabetes.</strong></p>
+<p>PCOS is essentially a metabolic disease that manifests reproductively. Treat the insulin resistance and PCOS often resolves. The traditional whole-grain, dal-heavy diet didn't create this metabolic background.</p>
+</div>
+
+<div class="principle">
+<div class="pn">SHIFT THREE</div>
+<h4>The iodine paradox</h4>
+<p>India had genuine iodine deficiency in inland areas, so iodized salt became mandatory in 1962 — that fixed goiter in many regions. But excess iodine intake from constant iodized salt + processed foods + industrial dairy creates the opposite problem. Excess iodine can trigger autoimmune thyroid conditions like Hashimoto's in genetically susceptible people.</p>
+<p>India now has BOTH iodine deficiency in some populations AND iodine excess in others. Hashimoto's autoimmune hypothyroidism is rising sharply, especially in women. Pre-1200 AD: rock salt (sendha namak), seasonal salt, sea salt — all contained natural iodine in varying amounts, never industrial doses.</p>
+</div>
+
+<div class="principle">
+<div class="pn">SHIFT FOUR</div>
+<h4>Fermented foods disappeared, gut microbiome collapsed</h4>
+<p>Pre-1200 AD Indians ate buttermilk daily, made fresh curd at home, fermented dosa-idli batters, ate pickles. Modern urban Indians eat sterile UHT milk, store-bought yogurt with stabilizers, and almost no fermented food.</p>
+<p>The gut microbiome controls the <strong>thyroid-gut axis</strong> — about 20% of T4 (inactive thyroid hormone) is converted to active T3 by gut bacteria. Gut dysbiosis directly causes subclinical hypothyroidism. It also drives autoimmune conditions across the board.</p>
+</div>
+
+<div class="principle">
+<div class="pn">SHIFT FIVE</div>
+<h4>Endocrine disruptors everywhere</h4>
+<p>BPA from plastic water bottles, phthalates from food packaging, glyphosate residues on crops — these are xenoestrogens. They mimic estrogen, disrupt thyroid receptors, and suppress testosterone production.</p>
+<p>Pre-1200 AD Indians stored water in copper, ate from leaves and clay, cooked in iron and brass. The chemical body burden today is incomparably higher — and disproportionately affects hormone-sensitive systems.</p>
+</div>
+
+<div class="dev-sep">॥</div>
+
+<h3>Women — what's actually happening</h3>
+
+<div class="grid-2">
+<div class="card">
+<h5>The condition</h5>
+<div class="name">PCOS</div>
+<p><strong>Root cause:</strong> insulin resistance.<br>High insulin tells ovaries to overproduce androgens, which disrupts ovulation, which causes the cysts and irregular periods.<br><br>The modern Indian diet — high refined carbs, low protein, low fiber, high seed oils, low omega-3, broken sleep — is essentially a PCOS-creating diet for genetically susceptible women.</p>
+</div>
+
+<div class="card">
+<h5>The condition</h5>
+<div class="name">Hashimoto's Thyroid</div>
+<p><strong>Root cause:</strong> autoimmune attack on thyroid.<br>Genetic susceptibility + high inflammation (seed oils) + gut dysbiosis (no fermented foods) + iodine excess + chronic stress + nutrient deficiencies (B12, D3, selenium) = the perfect storm.<br><br>Most clinically common thyroid disease in Indian women today.</p>
+</div>
+
+<div class="card">
+<h5>The condition</h5>
+<div class="name">Estrogen Dominance</div>
+<p><strong>Root cause:</strong> too much estrogen vs progesterone.<br>Drivers: BPA from plastics, hormone residues in conventional dairy, alcohol, caffeine excess, low fiber (estrogen is excreted via fiber-bound bile), chronic inflammation.<br><br>Manifests as: heavy periods, fibroids, endometriosis, breast tenderness.</p>
+</div>
+
+<div class="card">
+<h5>The condition</h5>
+<div class="name">Subclinical hypothyroid</div>
+<p><strong>Root cause:</strong> stressed but not yet failing thyroid.<br>Symptoms: fatigue, weight gain, hair fall, cold intolerance, brain fog. TSH borderline, T3/T4 still in range. Often missed by doctors.<br><br>Often the precursor to full-blown hypothyroidism if not addressed.</p>
+</div>
+</div>
+
+<h3>Men — what's actually happening</h3>
+
+<p>Indian male testosterone is dropping faster than the global trend. The modern vegetarian-heavy diet is paradoxically often deficient in zinc, B12, omega-3 DHA, and creatine — all four critical for testosterone synthesis and sperm health.</p>
+
+<p>Ancient vegetarian Indians compensated through ghee (zinc, K2), heavy dairy (B12), sesame (zinc, healthy fats), and constant physical labor. Modern vegetarian Indians eat dal-rice meals that are protein-deficient, micronutrient-deficient, and don't move enough.</p>
+
+<div class="grid-2">
+<div class="card">
+<h5>The condition</h5>
+<div class="name">Low Testosterone</div>
+<p><strong>Drivers:</strong> Insulin resistance, low zinc, low D3, poor sleep, sedentary work, alcohol, chronic stress, plastic exposure.<br><br>Symptoms: low energy, low libido, mood issues, soft muscle tone despite working out, belly fat that won't budge.<br><br>Often shows up in 30s now — was a 60+ issue historically.</p>
+</div>
+
+<div class="card">
+<h5>The condition</h5>
+<div class="name">Sperm Count Collapse</div>
+<p><strong>Drivers:</strong> Heat from laptops on laps, tight underwear, plastic-wrapped food, BPA exposure, low zinc, low antioxidants (C, E), high inflammation, smoking, alcohol, sedentary life, broken sleep.<br><br>Indian sperm counts have halved since 1980. Almost every cause is post-1960s.</p>
+</div>
+
+<div class="card">
+<h5>The condition</h5>
+<div class="name">Non-Alcoholic Fatty Liver</div>
+<p><strong>Root cause:</strong> sugar, refined carbs, seed oils.<br>Now affects 30-40% of non-drinking Indian men. Liver health directly affects testosterone metabolism — fatty liver = lower free testosterone.<br><br>Traditional diet of ghee, whole grains, dal, dairy doesn't damage the liver this way.</p>
+</div>
+
+<div class="card">
+<h5>The condition</h5>
+<div class="name">Erectile Dysfunction</div>
+<p><strong>Root cause:</strong> primarily vascular.<br>Endothelial dysfunction from insulin resistance and inflammation. Same root cause as PCOS in women — different organ, same disease.<br><br>ED in Indian men under 40 has tripled in 20 years.</p>
+</div>
+</div>
+
+<div class="pull">
+The same metabolic disease — insulin resistance + inflammation + nutrient deficiency + endocrine disruption — manifests as PCOS in women and low testosterone/ED in men. The diagnoses look different. The disease underneath is the same.
+</div>
+
+<h3>The shared timeline</h3>
+
+<p>If you graph the rise of these conditions in India, they overlap precisely with:</p>
+
+<ol>
+<li><strong>The spread of refined seed oils</strong> (1980s onwards)</li>
+<li><strong>The Green Revolution</strong> making rice/wheat ubiquitous and millets rare (1965-80)</li>
+<li><strong>The explosion of packaged food and plastic</strong> (1990s onwards)</li>
+<li><strong>Urbanization and sedentary lifestyles</strong> (continuous since 1970)</li>
+<li><strong>The abandonment of fermented foods</strong> (parallel with refrigeration adoption)</li>
+<li><strong>Chronic sleep disruption from screens</strong> (2007 onwards, accelerating)</li>
+</ol>
+
+<p>Pre-1200 AD India had none of these. Hypothyroidism, PCOS, type-2 diabetes, low testosterone, infertility — all existed in some form. Charaka describes goiter (<em>galaganda</em>), obesity (<em>sthaulya</em>), and infertility (<em>vandhyatva</em>). But prevalence today is unprecedented.</p>
+
+<div class="dev-sep">॥</div>
+
+<h3>What actually helps</h3>
+
+<p>The recommendations below aren't ancient mysticism — they're evidence-based interventions that happen to align with traditional Indian eating. Each addresses one or more of the five shifts above.</p>
+
+<h4>For thyroid health (both genders)</h4>
+
+<ul>
+<li><strong>Get tested:</strong> TSH, free T3, free T4, anti-TPO antibodies, Vitamin D, B12, ferritin, selenium</li>
+<li><strong>Selenium-rich foods:</strong> 2-3 Brazil nuts daily, sesame seeds, eggs if non-vegetarian — selenium is critical for T4 → T3 conversion</li>
+<li><strong>Cut seed oils completely</strong> — switch to ghee, cold-pressed mustard oil, coconut oil</li>
+<li><strong>Eliminate ultra-processed food</strong> — packaged snacks, biscuits, fried foods, ready-meals</li>
+<li><strong>Address gut health:</strong> home-fermented curd, kanji, fresh buttermilk, avoid unnecessary antibiotics</li>
+<li><strong>Sleep 7-8 hours</strong> — thyroid hormone production peaks during deep sleep</li>
+<li><strong>Reduce stress:</strong> yoga, walking, meditation — chronic cortisol suppresses thyroid function</li>
+<li><strong>For Hashimoto's specifically:</strong> gluten elimination helps many due to molecular mimicry between gluten and thyroid tissue</li>
+</ul>
+
+<h4>For PCOS</h4>
+
+<ul>
+<li><strong>The single most effective intervention is reversing insulin resistance</strong> — same prescription as thyroid above</li>
+<li><strong>Strength training is dramatically effective</strong> for PCOS, more than cardio alone</li>
+<li><strong>Inositol (myo + d-chiro)</strong> has good RCT evidence — 4g/day</li>
+<li><strong>Omega-3 (algal DHA for vegetarians)</strong> reduces inflammation and helps ovulation</li>
+<li><strong>Spearmint tea</strong> has RCT evidence for reducing androgens</li>
+<li><strong>Eliminate sugar and refined carbs</strong> — non-negotiable</li>
+</ul>
+
+<h4>For male testosterone and metabolic health</h4>
+
+<ul>
+<li><strong>Same thyroid prescription</strong> applies fully</li>
+<li><strong>Lift heavy weights 3-4x/week</strong> — compound movements (squat, deadlift, press, row)</li>
+<li><strong>Get sun exposure</strong> — vitamin D is a hormone, not a vitamin</li>
+<li><strong>Sleep 7-8 hours</strong> — testosterone is produced primarily during sleep</li>
+<li><strong>Zinc + magnesium</strong> — most Indian vegetarian men are deficient in both</li>
+<li><strong>Cold exposure</strong> (cold showers, cold morning walks) — measurable testosterone effect</li>
+<li><strong>Reduce phytoestrogens in excess</strong> — moderate soya is fine, excess (300g+ daily) isn't ideal for men</li>
+<li><strong>Eliminate alcohol or limit severely</strong> — directly suppresses testosterone</li>
+</ul>
+
+<h3>The bigger picture</h3>
+
+<p>What this section argues isn't that ancient India had perfect medicine, or that returning to a 10th-century diet will cure everything. It's something simpler and more actionable:</p>
+
+<p><strong>The lifestyle that emerges naturally from traditional Indian eating</strong> — whole grains, lots of dairy, daily dals, ghee instead of seed oils, fermented foods, eating with the sun, fasting periodically, physical activity, and home-cooked meals — <strong>happens to be highly protective against the exact metabolic and hormonal diseases that modern Indians are dying from</strong>.</p>
+
+<p>Charaka didn't know about insulin receptors or thyroid antibodies. He observed that certain foods, eaten in certain ways, produced healthier humans. Two thousand years later, we have molecular explanations for why his observations were largely correct.</p>
+
+<p>The supplement industry, the pharmaceutical industry, and the processed food industry exist partly because we abandoned the systems that worked. Reverse the abandonment in your own kitchen, and most of these diseases become preventable in your own body — even if your genes load the dice against you.</p>
+
+<div class="pull">
+"<em>Aushadham vrithyabhavah</em>" — when food fails, then medicine. Charaka's claim was that food, properly chosen, prevents the need for medicine. Modern epidemiology is now agreeing.
+<span class="cite">Charaka Samhita, Sutrasthana 16</span>
+</div>
+
+<div class="dev-sep">॥ ॐ ॥</div>
+</div>
+
+<!-- SOURCES -->
+<div class="sec" id="sources">
+<h2><span class="num">Sources</span>The evidence</h2>
+
+<p class="lead">Every claim in this guide traces to either a primary ancient text, an archaeological source, or peer-reviewed modern research. Supplement marketing and Instagram guru hearsay are excluded.</p>
+
+<h3>Primary ancient texts</h3>
+
+<div class="foot">
+<ol>
+<li><strong>Charaka Samhita</strong> (c. 100 BCE - 200 CE), compiled by Charaka, revised by Dṛḍhabala (6th century CE). Sutrasthana Ch. 5 (Ahara vidhi), Ch. 6 (Ritucharya), Ch. 27 (Annapana Vidhi — food classification).</li>
+
+<li><strong>Sushruta Samhita</strong> (c. 600 BCE - 500 CE). Sutrasthana Ch. 46 — on Yava as daily food, food combinations.</li>
+
+<li><strong>Ashtanga Hridaya</strong> by Vagbhata (c. 600 CE). Consolidation of Charaka + Sushruta. Sutrasthana Ch. 3 (Ritucharya), Ch. 8 (Matrashitiya — quantity of food).</li>
+
+<li><strong>Rigveda</strong> (c. 1500-1000 BCE). References to Yava (barley) in Mandala 1.66, 1.135, 5.53, 10.101 and others; Vrihi (rice) in Mandala 8.69, 10.90.</li>
+
+<li><strong>Atharvaveda</strong> (c. 1200-1000 BCE). Extensive herbal and medical content. Considered a precursor to the Ayurvedic tradition.</li>
+
+<li><strong>Arthashastra</strong> by Kautilya (c. 300 BCE). Book II — state granaries and food policy.</li>
+
+<li><strong>Brihat Parashara Hora Shastra</strong> (c. 600-900 CE, attributed to Sage Parashara). Foundational text of Vedic astrology containing the formal Nava Dhanya planetary correspondences. Multiple chapters describe grain offerings, fasting rules, and food associations with the Navagraha.</li>
+
+<li><strong>Grihya Sutras</strong> (Ashvalayana, Apastamba, Hiranyakeshi — c. 800-300 BCE). Domestic ritual manuals describing daily and seasonal grain offerings, including early forms of the nine-grain framework.</li>
+</ol>
+</div>
+
+<h3>Archaeological evidence</h3>
+
+<div class="foot">
+<ol start="7">
+<li>Fuller, D.Q. (2011). "Finding plant domestication in the Indian subcontinent." <em>Current Anthropology</em> 52(S4). Grain evidence from Harappan sites.</li>
+
+<li>Pokharia, A.K. et al. (2017). "Early agricultural experimentation in the north-western Gangetic plain." <em>Archaeological and Anthropological Sciences</em>. Carbonized grain analysis.</li>
+
+<li>Madella, M. & Fuller, D.Q. (2006). "Palaeoecology and the Harappan civilisation of South Asia." <em>Quaternary Science Reviews</em> 25. Grain diversification patterns.</li>
+</ol>
+</div>
+
+<h3>Modern nutritional research</h3>
+
+<div class="foot">
+<ol start="10">
+<li>Behall, K.M. et al. (2004). "Diets containing barley significantly reduce lipids in mildly hypercholesterolemic men and women." <em>American Journal of Clinical Nutrition</em> 80.</li>
+
+<li>Saltzman, E. et al. (2001). "An oat-containing hypocaloric diet reduces systolic blood pressure." <em>Journal of Nutrition</em> 131.</li>
+
+<li>Chandrasekara, A. & Shahidi, F. (2010). "Content of insoluble bound phenolics in millets." <em>Journal of Agricultural and Food Chemistry</em> 58.</li>
+
+<li>Saleh, A.S.M. et al. (2013). "Millet grains: nutritional quality, processing, and potential health benefits." <em>Comprehensive Reviews in Food Science and Food Safety</em> 12.</li>
+
+<li>Chandrasekhar, K. et al. (2012). "A prospective, randomized double-blind, placebo-controlled study of safety and efficacy of a high-concentration full-spectrum extract of ashwagandha root in reducing stress and anxiety in adults." <em>Indian Journal of Psychological Medicine</em> 34.</li>
+
+<li>Lopresti, A.L. et al. (2019). "An investigation into the stress-relieving and pharmacological actions of an ashwagandha extract." <em>Medicine</em> 98.</li>
+
+<li>Hewlings, S.J. & Kalman, D.S. (2017). "Curcumin: A review of its effects on human health." <em>Foods</em> 6.</li>
+
+<li>Kaur, M. et al. (2017). "Amla (<em>Emblica officinalis</em>) based functional foods." <em>Critical Reviews in Food Science and Nutrition</em>.</li>
+
+<li>Longo, V.D. & Panda, S. (2016). "Fasting, circadian rhythms, and time-restricted feeding in healthy lifespan." <em>Cell Metabolism</em> 23.</li>
+
+<li>Wehrens, S.M.T. et al. (2017). "Meal timing regulates the human circadian system." <em>Current Biology</em> 27.</li>
+</ol>
+</div>
+
+<h3>Historical context</h3>
+
+<div class="foot">
+<ol start="20">
+<li>Achaya, K.T. (1994). <em>Indian Food: A Historical Companion</em>. Oxford University Press. The foundational English-language history of Indian cuisine.</li>
+
+<li>Sen, C.T. (2015). <em>Feasts and Fasts: A History of Food in India</em>. Reaktion Books. Modern scholarly overview.</li>
+
+<li>Davidar, A.W. (2022). "The Green Revolution and India's Grain Shift." Economic and Political Weekly analysis of post-1965 diet transformation.</li>
+
+<li>FAO / UN (2023). "International Year of Millets." Report on millet decline in India (1960-2020) and rediscovery efforts.</li>
+</ol>
+</div>
+
+<h3>Modern Indian disease epidemiology</h3>
+
+<div class="foot">
+<ol start="24">
+<li>Unnikrishnan, A.G. et al. (2013). "Prevalence of hypothyroidism in adults: An epidemiological study in eight cities of India." <em>Indian Journal of Endocrinology and Metabolism</em> 17(4). The 42M figure source.</li>
+
+<li>Kalra, S. et al. (2011). "Thyroid dysfunction and dyslipidemia in Indian women." <em>Journal of Mid-life Health</em> 2(2).</li>
+
+<li>Bharali, M.D. et al. (2021). "Prevalence of polycystic ovarian syndrome in India: a systematic review and meta-analysis." <em>Cureus</em> 13(12).</li>
+
+<li>Anjana, R.M. et al. (2023). "Metabolic non-communicable disease health report of India: ICMR-INDIAB national cross-sectional study." <em>The Lancet Diabetes & Endocrinology</em> 11(7). Source for diabetes prevalence rise.</li>
+
+<li>Travison, T.G. et al. (2007). "A population-level decline in serum testosterone levels in American men." <em>Journal of Clinical Endocrinology & Metabolism</em> 92(1). The "1% per year" testosterone decline data.</li>
+
+<li>Levine, H. et al. (2017, updated 2022). "Temporal trends in sperm count: a systematic review and meta-regression analysis of samples collected globally in the 20th and 21st centuries." <em>Human Reproduction Update</em> 28(2). The sperm count decline data.</li>
+
+<li>Knez, M. et al. (2017). "The linoleic acid: dihomo-γ-linolenic acid ratio (LA:DGLA) — an emerging biomarker of Zn status." <em>Nutrients</em> 9(8). On omega-6 excess and zinc-thyroid axis.</li>
+
+<li>DiNicolantonio, J.J. & O'Keefe, J.H. (2018). "Omega-6 vegetable oils as a driver of coronary heart disease: the oxidized linoleic acid hypothesis." <em>Open Heart</em> 5(2). On seed oil dangers.</li>
+
+<li>Knezevic, J. et al. (2020). "Thyroid-gut-axis: how does the microbiota influence thyroid function?" <em>Nutrients</em> 12(6). On gut-thyroid connection.</li>
+
+<li>Patrick, L. (2009). "Thyroid disruption: mechanism and clinical implications in human health." <em>Alternative Medicine Review</em> 14(4). On endocrine disruptors and thyroid.</li>
+
+<li>Diamanti-Kandarakis, E. et al. (2009). "Endocrine-disrupting chemicals: an Endocrine Society scientific statement." <em>Endocrine Reviews</em> 30(4). The foundational paper on BPA, phthalates, hormone disruption.</li>
+
+<li>Unfer, V. et al. (2017). "Myo-inositol effects in women with PCOS: a meta-analysis of randomized controlled trials." <em>Endocrine Connections</em> 6(8). On inositol for PCOS.</li>
+
+<li>Pizzorno, J. (2014). "Glutathione!" <em>Integrative Medicine</em> 13(1). On nutrient deficiencies in modern diets and detoxification.</li>
+
+<li>Liu, P.Y. et al. (2003). "The rationale, efficacy and safety of androgen therapy in older men: future research and current practice recommendations." <em>Journal of Clinical Endocrinology & Metabolism</em> 89(10). On testosterone and lifestyle.</li>
+
+<li>Heller, J. et al. (2018). "The microbiome and the thyroid." <em>Maturitas</em> 116. Hashimoto's gut connection.</li>
+</ol>
+</div>
+
+<p style="text-align:center;margin-top:2rem;font-style:italic;color:var(--mut);font-size:.95rem;padding:0 .5rem">Every recommendation in this guide is either (a) based on a primary text verifiable by Sanskrit scholars, (b) based on archaeological evidence from peer-reviewed excavation reports, or (c) supported by modern peer-reviewed nutritional science.</p>
+
+<div class="dev-sep">॥ ॐ शान्तिः शान्तिः शान्तिः ॥</div>
+
+</div>
+
+</div>
+
+<script>
+const buttons=document.querySelectorAll('.nav button');
+const secs=document.querySelectorAll('.sec');
+buttons.forEach(b=>{
+  b.onclick=()=>{
+    buttons.forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+    secs.forEach(s=>s.classList.remove('on'));
+    document.getElementById(b.dataset.s).classList.add('on');
+    window.scrollTo({top:0,behavior:'smooth'});
+  };
+});
+</script>
+</body>
+</html>

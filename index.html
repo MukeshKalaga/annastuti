@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#F4EFE3">
+<title>Ancient Indian Diet · Pre-1200 AD Research</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Noto+Serif+Telugu:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light only;
+  --paper:#F4EFE3;
+  --paper-2:#EBE4D1;
+  --ink:#1F1A12;
+  --ink-soft:#3D342A;
+  --mut:#6B5F4E;
+  --accent:#B0411E;
+  --gold:#A88534;
+  --sage:#5A6B3D;
+  --terracotta:#C67651;
+  --border:#C9BFA8;
+}
+
+html{background:#F4EFE3 !important;color:#1F1A12 !important}
+
+@media (prefers-color-scheme: dark){
+  :root{color-scheme: light only}
+  html, body{background:#F4EFE3 !important;color:#1F1A12 !important}
+}
+
+*{margin:0;padding:0;box-sizing:border-box;-webkit-text-size-adjust:100%}
+html{background:#F4EFE3}
+body{
+  font-family:'Cormorant Garamond',serif;
+  background:#F4EFE3;
+  color:#1F1A12;
+  line-height:1.7;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+}
+
+body[data-lang="hi"]{font-family:'Noto Serif Devanagari','Noto Sans Devanagari',serif;line-height:1.85}
+body[data-lang="te"]{font-family:'Noto Serif Telugu','Noto Sans Telugu',serif;line-height:1.85}
+
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:radial-gradient(ellipse at 20% 10%,rgba(176,65,30,.04),transparent 50%),radial-gradient(ellipse at 80% 80%,rgba(168,133,52,.05),transparent 55%);
+  pointer-events:none;z-index:0;
+}
+body::after{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.10 0 0 0 0 0.07 0 0 0 0.15 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity:.35;pointer-events:none;z-index:0;mix-blend-mode:multiply
+}
+
+.wrap{max-width:880px;margin:0 auto;padding:1rem 1.2rem 3rem;position:relative;z-index:1}
+
+/* Language switcher */
+.lang-bar{
+  display:flex;justify-content:center;gap:6px;
+  padding:.8rem 0 1.5rem;border-bottom:1px solid var(--border);margin-bottom:1.5rem;
+  flex-wrap:wrap;
+}
+.lang-btn{
+  font-family:'Inter',sans-serif;
+  background:transparent;border:1.5px solid var(--border);
+  color:var(--ink-soft);padding:6px 14px;
+  font-size:.72rem;letter-spacing:.06em;font-weight:500;
+  cursor:pointer;transition:all .25s;border-radius:0;
+  text-transform:none;
+}
+.lang-btn:hover{border-color:var(--accent);color:var(--accent)}
+.lang-btn.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.lang-btn .native{display:block;font-size:.65rem;opacity:.75;margin-top:1px}
+
+/* Hero */
+.hero{text-align:center;padding:.5rem 0 2rem;border-bottom:1px solid var(--border);position:relative}
+.eye{font-family:'Noto Sans Devanagari',serif;font-size:1.8rem;color:var(--accent);margin-bottom:.8rem;letter-spacing:.05em}
+.hero h1{font-size:clamp(1.9rem,6vw,3.4rem);font-weight:600;line-height:1.15;letter-spacing:-.01em;margin-bottom:.6rem;font-style:italic;color:var(--ink)}
+.hero .sub{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);margin-top:1rem}
+.hero .dev{font-family:'Noto Sans Devanagari',serif;color:var(--gold);font-size:1.2rem;margin:.8rem 0}
+.hero p{font-size:1rem;color:var(--mut);max-width:580px;margin:0 auto;font-style:italic;padding:0 .5rem}
+
+body[data-lang="hi"] .hero h1, body[data-lang="te"] .hero h1{font-style:normal}
+body[data-lang="hi"] .hero p, body[data-lang="te"] .hero p{font-style:normal}
+
+/* Nav */
+.nav{
+  display:flex;gap:5px;overflow-x:auto;
+  padding:1rem .2rem;position:sticky;top:0;
+  background:var(--paper);z-index:50;
+  margin:0 -.5rem;padding-left:.8rem;padding-right:.8rem;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none;
+}
+.nav::-webkit-scrollbar{display:none}
+.nav::before{content:'';position:absolute;inset:0;background:var(--paper);z-index:-1}
+.nav button{
+  font-family:'Inter',sans-serif;
+  background:transparent;border:1px solid var(--border);
+  color:var(--ink-soft);padding:7px 14px;
+  font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  cursor:pointer;transition:all .3s;border-radius:0;white-space:nowrap;flex-shrink:0;
+}
+body[data-lang="hi"] .nav button, body[data-lang="te"] .nav button{
+  font-family:inherit;text-transform:none;letter-spacing:.02em;font-size:.78rem;
+}
+.nav button:hover{border-color:var(--accent);color:var(--accent)}
+.nav button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+.sec{display:none;animation:fi .6s ease}
+.sec.on{display:block}
+@keyframes fi{from{opacity:0;transform:translateY(12px)}to{opacity:1}}
+
+/* Headings */
+h2{font-size:clamp(1.6rem,5vw,2.4rem);font-weight:600;line-height:1.2;margin:2rem 0 1rem;font-style:italic;color:var(--ink)}
+h2 .num{font-family:'Inter',sans-serif;font-style:normal;font-size:.65rem;letter-spacing:.18em;color:var(--accent);display:block;margin-bottom:.5rem;font-weight:500}
+h3{font-size:clamp(1.25rem,4vw,1.5rem);font-weight:600;margin:1.8rem 0 .7rem;font-style:italic;color:var(--ink)}
+h4{font-family:'Inter',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin:1.5rem 0 .6rem}
+
+body[data-lang="hi"] h2, body[data-lang="te"] h2{font-style:normal}
+body[data-lang="hi"] h3, body[data-lang="te"] h3{font-style:normal}
+body[data-lang="hi"] h4, body[data-lang="te"] h4{font-family:inherit;text-transform:none;letter-spacing:0}
+
+p{font-size:1.05rem;line-height:1.75;margin-bottom:1.1rem;color:var(--ink-soft)}
+.lead{font-size:clamp(1.1rem,3.5vw,1.25rem);line-height:1.6;margin-bottom:1.5rem;color:var(--ink)}
+.lead::first-letter{font-size:3.2rem;font-weight:600;float:left;line-height:.85;padding:.3rem .5rem 0 0;color:var(--accent);font-style:italic}
+body[data-lang="hi"] .lead::first-letter, body[data-lang="te"] .lead::first-letter{
+  font-size:1.25rem;float:none;padding:0;font-style:normal;
+}
+
+em{color:var(--accent);font-style:italic}
+body[data-lang="hi"] em, body[data-lang="te"] em{font-style:normal}
+strong{font-weight:600;color:var(--ink)}
+.sans{font-family:'Noto Sans Devanagari',serif;color:var(--gold);font-weight:500}
+body[data-lang="hi"] .sans{color:var(--accent)}
+
+ol, ul{padding-left:1.3rem;margin:1rem 0;color:var(--ink-soft)}
+li{font-size:1rem;line-height:1.7;margin-bottom:.5rem}
+
+.pull{
+  border-left:3px solid var(--accent);padding:1rem 1.2rem;
+  margin:1.5rem 0;background:rgba(176,65,30,.05);
+  font-size:1.08rem;line-height:1.6;font-style:italic;color:var(--ink);
+}
+body[data-lang="hi"] .pull, body[data-lang="te"] .pull{font-style:normal}
+.pull .cite{display:block;margin-top:.7rem;font-family:'Inter',sans-serif;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);font-style:normal}
+body[data-lang="hi"] .pull .cite, body[data-lang="te"] .pull .cite{font-family:inherit;text-transform:none}
+
+/* Tables */
+.tbl-wrap{overflow-x:auto;margin:1.3rem -.5rem;padding:0 .5rem;-webkit-overflow-scrolling:touch}
+.tbl{width:100%;border-collapse:collapse;font-family:'Inter',sans-serif;font-size:.82rem;min-width:500px;background:rgba(255,255,255,.3)}
+body[data-lang="hi"] .tbl, body[data-lang="te"] .tbl{font-family:inherit;font-size:.88rem}
+.tbl thead{background:var(--ink);color:var(--paper)}
+.tbl th{padding:.7rem .8rem;text-align:left;font-weight:500;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--paper)}
+body[data-lang="hi"] .tbl th, body[data-lang="te"] .tbl th{font-size:.75rem;text-transform:none;letter-spacing:0}
+.tbl td{padding:.8rem;border-bottom:1px solid var(--border);vertical-align:top;color:var(--ink-soft)}
+.tbl tr:nth-child(even){background:rgba(201,191,168,.2)}
+.tbl td strong{color:var(--accent);font-weight:600}
+
+/* Cards */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1.3rem 0}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.8rem;margin:1.3rem 0}
+@media(max-width:640px){.grid-2,.grid-3{grid-template-columns:1fr;gap:.7rem}}
+.card{background:rgba(255,255,255,.55);border:1px solid var(--border);padding:1rem 1.1rem;position:relative;color:var(--ink-soft)}
+.card::before{content:'';position:absolute;top:5px;left:5px;right:5px;bottom:5px;border:1px solid rgba(168,133,52,.2);pointer-events:none}
+.card h5{font-family:'Inter',sans-serif;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem;font-weight:600}
+body[data-lang="hi"] .card h5, body[data-lang="te"] .card h5{font-family:inherit;text-transform:none;font-size:.72rem;letter-spacing:0}
+.card .name{font-size:1.1rem;font-weight:600;font-style:italic;margin-bottom:.4rem;color:var(--ink)}
+body[data-lang="hi"] .card .name, body[data-lang="te"] .card .name{font-style:normal}
+.card .sans-name{font-family:'Noto Sans Devanagari',serif;font-size:.95rem;color:var(--accent);margin-bottom:.4rem;font-weight:500}
+.card p{font-size:.9rem;margin:0;line-height:1.65;color:var(--ink-soft)}
+
+/* Timeline */
+.tl{position:relative;padding-left:1.6rem;margin:1.5rem 0}
+.tl::before{content:'';position:absolute;left:.4rem;top:0;bottom:0;width:1px;background:var(--border)}
+.tl-item{position:relative;margin-bottom:1.8rem}
+.tl-item::before{content:'';position:absolute;left:-1.55rem;top:.3rem;width:11px;height:11px;background:var(--accent);border-radius:50%;border:3px solid var(--paper);box-shadow:0 0 0 1px var(--accent)}
+.tl-date{font-family:'Inter',sans-serif;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem;font-weight:600}
+body[data-lang="hi"] .tl-date, body[data-lang="te"] .tl-date{font-family:inherit;text-transform:none;letter-spacing:0;font-size:.78rem}
+.tl-title{font-size:1.1rem;font-weight:600;font-style:italic;margin-bottom:.4rem;color:var(--ink)}
+body[data-lang="hi"] .tl-title, body[data-lang="te"] .tl-title{font-style:normal}
+.tl-item p{font-size:.95rem;margin:0;line-height:1.65}
+
+/* Meal integration */
+.meals-block{margin:1.3rem 0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:.5rem 0}
+.meal-row{display:grid;grid-template-columns:70px 1fr 1fr;gap:.8rem;padding:.9rem 0;border-bottom:1px solid var(--border);align-items:start}
+.meal-row:last-child{border:none}
+.meal-day{font-family:'Inter',sans-serif;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600;padding-top:.2rem}
+body[data-lang="hi"] .meal-day, body[data-lang="te"] .meal-day{font-family:inherit;text-transform:none;letter-spacing:0;font-size:.78rem}
+.meal-current,.meal-new{font-size:.9rem;color:var(--ink-soft);line-height:1.55}
+.meal-current{text-decoration:line-through;opacity:.55}
+.meal-new strong{color:var(--accent)}
+@media(max-width:640px){.meal-row{grid-template-columns:1fr;gap:.3rem;padding:.9rem 0}.meal-day{padding-top:0;margin-bottom:.2rem}.meal-current{opacity:.45}}
+
+/* Footnotes */
+.foot{border-top:1px solid var(--border);margin-top:2.5rem;padding-top:1.5rem;font-family:'Inter',sans-serif;font-size:.78rem;color:var(--mut);line-height:1.7}
+.foot ol{padding-left:1.2rem}
+.foot li{margin-bottom:.5rem;font-size:.78rem;color:var(--mut)}
+.foot strong{color:var(--ink-soft)}
+.foot em{color:var(--ink-soft);font-style:italic}
+.foot a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(176,65,30,.25);transition:border-color .2s}
+.foot a:hover{border-bottom-color:var(--accent)}
+.foot a:visited{color:var(--accent)}
+
+/* Stats */
+.stat-band{background:var(--ink);color:var(--paper);padding:1.8rem 1.2rem;margin:1.8rem -.3rem;text-align:center;position:relative;border-radius:2px}
+.stat-band::before{content:'';position:absolute;top:8px;left:8px;right:8px;bottom:8px;border:1px solid rgba(168,133,52,.3);pointer-events:none}
+.stat-band .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;position:relative;z-index:1}
+.stat-band .num{font-size:clamp(1.6rem,5vw,2.2rem);font-weight:600;font-style:italic;color:var(--gold);line-height:1}
+body[data-lang="hi"] .stat-band .num, body[data-lang="te"] .stat-band .num{font-style:normal}
+.stat-band .lbl{font-family:'Inter',sans-serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;opacity:.8;margin-top:.4rem;color:var(--paper)}
+body[data-lang="hi"] .stat-band .lbl, body[data-lang="te"] .stat-band .lbl{font-family:inherit;text-transform:none;letter-spacing:0;font-size:.72rem}
+@media(max-width:560px){.stat-band{padding:1.5rem 1rem}.stat-band .stat-grid{grid-template-columns:1fr;gap:1.3rem}}
+
+/* Principles */
+.principle{padding:1.3rem 0;border-bottom:1px solid var(--border)}
+.principle:last-child{border:none}
+.principle .pn{font-family:'Inter',sans-serif;font-size:.65rem;letter-spacing:.15em;color:var(--accent);font-weight:600;margin-bottom:.4rem}
+body[data-lang="hi"] .principle .pn, body[data-lang="te"] .principle .pn{font-family:inherit;letter-spacing:0;font-size:.78rem}
+.principle h4{margin-top:.2rem;color:var(--ink);text-transform:none;font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;font-style:italic;letter-spacing:0}
+body[data-lang="hi"] .principle h4, body[data-lang="te"] .principle h4{font-family:inherit;font-style:normal}
+.principle p{font-size:1rem;line-height:1.7}
+
+.dev-sep{text-align:center;font-family:'Noto Sans Devanagari',serif;color:var(--gold);font-size:1rem;margin:2rem 0;letter-spacing:.25em;opacity:.7}
+
+sup{font-size:.65em;color:var(--accent);font-weight:600}
+
+/* Lang-specific content visibility */
+.lang-content{display:none}
+.lang-content.active{display:block}
+
+@media(max-width:480px){
+  .wrap{padding:.8rem 1rem 2.5rem}
+  .hero{padding-top:.5rem}
+  .eye{font-size:1.5rem}
+  .hero .dev{font-size:1.1rem}
+  h2{margin:1.5rem 0 .8rem}
+  p{font-size:1rem;line-height:1.7}
+  .tl{padding-left:1.3rem}
+  .tl-item::before{left:-1.25rem;width:10px;height:10px}
+  .pull{padding:.9rem 1rem;font-size:1rem}
+  .card{padding:.9rem 1rem}
+  .card p{font-size:.88rem}
+  li{font-size:.95rem}
+}
+
+/* Font-size selector (top-right, fixed) */
+.fs-bar{
+  position:fixed;top:.6rem;right:.6rem;z-index:60;
+  display:flex;align-items:flex-end;gap:1px;
+  background:rgba(244,239,227,.92);
+  border:1px solid var(--border);
+  padding:3px;
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  box-shadow:0 2px 8px rgba(31,26,18,.06);
+}
+.fs-btn{
+  font-family:'Inter',sans-serif;
+  background:transparent;border:none;
+  color:var(--ink-soft);cursor:pointer;
+  padding:3px 7px;font-weight:600;line-height:1;
+  border-radius:0;transition:color .2s, background .2s;
+}
+.fs-btn:nth-child(1){font-size:.62rem}
+.fs-btn:nth-child(2){font-size:.78rem}
+.fs-btn:nth-child(3){font-size:.95rem}
+.fs-btn:nth-child(4){font-size:1.15rem}
+.fs-btn:hover{color:var(--accent)}
+.fs-btn.on{background:var(--ink);color:var(--paper)}
+@media(max-width:480px){
+  .fs-bar{top:.4rem;right:.4rem;padding:2px}
+  .fs-btn{padding:2px 5px}
+}
+
+/* Shared-timeline chart (modern.js) */
+.tl-chart{
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.4);
+  padding:1rem 1.1rem 1.1rem;
+  margin:1.4rem 0;
+  position:relative;
+}
+.tl-chart .tl-cap{
+  font-family:'Inter',sans-serif;
+  font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--accent);font-weight:600;margin-bottom:.6rem;
+}
+body[data-lang="hi"] .tl-chart .tl-cap, body[data-lang="te"] .tl-chart .tl-cap{
+  font-family:inherit;text-transform:none;letter-spacing:0;font-size:.72rem;
+}
+.tl-chart .tl-grid{
+  display:grid;
+  grid-template-columns: minmax(90px, 14ch) 1fr minmax(46px, 7ch);
+  column-gap:.55rem;row-gap:.25rem;
+  align-items:center;
+}
+.tl-chart .tl-head{
+  grid-column:1 / -1;
+  font-family:'Inter',sans-serif;
+  font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);font-weight:600;
+  padding:.55rem 0 .25rem;
+  border-top:1px solid var(--border);
+  margin-top:.3rem;
+}
+.tl-chart .tl-head:first-child{border:none;margin-top:0;padding-top:0}
+body[data-lang="hi"] .tl-chart .tl-head, body[data-lang="te"] .tl-chart .tl-head{
+  font-family:inherit;text-transform:none;letter-spacing:0;font-size:.78rem;color:var(--accent);
+}
+.tl-chart .tl-lbl{
+  font-family:'Inter',sans-serif;
+  font-size:.7rem;color:var(--ink-soft);font-weight:500;
+  text-align:right;line-height:1.15;
+}
+.tl-chart .tl-lbl small{display:block;font-size:.58rem;color:var(--mut);font-weight:400;margin-top:1px}
+body[data-lang="hi"] .tl-chart .tl-lbl, body[data-lang="te"] .tl-chart .tl-lbl{
+  font-family:inherit;font-size:.82rem;line-height:1.25;
+}
+body[data-lang="hi"] .tl-chart .tl-lbl small, body[data-lang="te"] .tl-chart .tl-lbl small{font-size:.68rem}
+.tl-chart svg.tl-svg{
+  width:100%;height:2.6rem;display:block;
+  background:rgba(201,191,168,.18);
+}
+.tl-chart .tl-svg .tl-grid-line{stroke:var(--border);stroke-width:.6;opacity:.55}
+.tl-chart .tl-svg .tl-line{fill:none;stroke-width:1.8;stroke-linejoin:round;stroke-linecap:round}
+.tl-chart .tl-svg .tl-line.dashed{stroke-dasharray:4 3;opacity:.7}
+.tl-chart .tl-svg .tl-dot{stroke-width:0}
+.tl-chart .tl-svg .tl-dot-ring{fill:none;stroke-width:1.5}
+.tl-chart .tl-end{
+  font-family:'Inter',sans-serif;font-size:.7rem;font-weight:600;
+  color:var(--accent);text-align:left;letter-spacing:.02em;
+}
+.tl-chart .tl-end small{display:block;font-size:.55rem;color:var(--mut);font-weight:400;margin-top:1px;letter-spacing:0}
+body[data-lang="hi"] .tl-chart .tl-end, body[data-lang="te"] .tl-chart .tl-end{font-family:inherit;font-size:.8rem}
+.tl-chart .tl-axis{
+  grid-column:2;
+  display:flex;justify-content:space-between;
+  font-family:'Inter',sans-serif;font-size:.58rem;color:var(--mut);
+  margin-top:.35rem;padding:0 1px;
+}
+.tl-chart .tl-foot{
+  font-family:'Inter',sans-serif;font-size:.65rem;color:var(--mut);line-height:1.55;
+  margin-top:.9rem;padding-top:.55rem;border-top:1px solid var(--border);
+}
+body[data-lang="hi"] .tl-chart .tl-foot, body[data-lang="te"] .tl-chart .tl-foot{font-family:inherit;font-size:.76rem;line-height:1.6}
+.tl-chart .tl-foot strong{color:var(--ink-soft)}
+.tl-chart .tl-foot .tl-key{display:inline-flex;align-items:center;gap:.3rem;margin-right:.9rem}
+.tl-chart .tl-foot .tl-key i{display:inline-block;width:18px;height:2px;background:var(--ink-soft)}
+.tl-chart .tl-foot .tl-key.dashed i{background:repeating-linear-gradient(to right,var(--ink-soft) 0 4px,transparent 4px 7px)}
+.tl-chart .tl-foot .tl-key.dotted i{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+
+/* Legend swatches in OL */
+.sw{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:.4rem;vertical-align:middle;border:1px solid rgba(31,26,18,.15)}
+
+@media(max-width:560px){
+  .tl-chart{padding:.8rem .7rem .9rem}
+  .tl-chart .tl-grid{grid-template-columns: minmax(70px, 11ch) 1fr minmax(38px, 6ch);column-gap:.4rem}
+  .tl-chart .tl-lbl{font-size:.62rem}
+  .tl-chart .tl-lbl small{font-size:.52rem}
+  .tl-chart .tl-end{font-size:.62rem}
+  .tl-chart .tl-axis{font-size:.52rem}
+  .tl-chart svg.tl-svg{height:2.2rem}
+}
+</style>
+</head>
+<body data-lang="en">
+
+<!-- FONT SIZE SELECTOR -->
+<div class="fs-bar" role="group" aria-label="Font size">
+<button class="fs-btn" data-fs="0" aria-label="Smallest">A</button>
+<button class="fs-btn" data-fs="1" aria-label="Small">A</button>
+<button class="fs-btn on" data-fs="2" aria-label="Large">A</button>
+<button class="fs-btn" data-fs="3" aria-label="Largest">A</button>
+</div>
+
+<div class="wrap">
+
+<!-- LANGUAGE SWITCHER -->
+<div class="lang-bar">
+<button class="lang-btn on" data-lang="en">English</button>
+<button class="lang-btn" data-lang="hi">Hindi<span class="native">हिन्दी</span></button>
+<button class="lang-btn" data-lang="te">Telugu<span class="native">తెలుగు</span></button>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+<div class="eye">॥ अन्नं ब्रह्म ॥</div>
+
+<div class="lang-content active" data-lang="en">
+<h1>Food is Brahman</h1>
+<div class="dev">अन्नं ब्रह्मेति व्यजानात्</div>
+<p>What pre-1200 AD Indians actually ate — and what modern science is rediscovering about their wisdom.</p>
+<div class="sub">A research-backed guide · 2026</div>
+</div>
+
+<div class="lang-content" data-lang="hi">
+<h1>अन्न ही ब्रह्म है</h1>
+<div class="dev">अन्नं ब्रह्मेति व्यजानात्</div>
+<p>1200 ईस्वी से पहले के भारतीय वास्तव में क्या खाते थे — और आधुनिक विज्ञान उनकी बुद्धिमत्ता के बारे में क्या पुनः खोज रहा है।</p>
+<div class="sub">शोध-आधारित मार्गदर्शिका · 2026</div>
+</div>
+
+<div class="lang-content" data-lang="te">
+<h1>అన్నమే బ్రహ్మము</h1>
+<div class="dev">అన్నం బ్రహ్మేతి వ్యజానాత్</div>
+<p>క్రీ.శ. 1200కి ముందు భారతీయులు నిజంగా ఏమి తినేవారు — మరియు ఆధునిక శాస్త్రం వారి జ్ఞానం గురించి ఏమి తిరిగి కనుగొంటోంది.</p>
+<div class="sub">పరిశోధన-ఆధారిత మార్గదర్శి · 2026</div>
+</div>
+</div>
+
+<!-- NAV -->
+<div class="nav" id="nav">
+<button class="on" data-s="intro" data-en="Intro" data-hi="परिचय" data-te="పరిచయం">Intro</button>
+<button data-s="grains" data-en="Grains" data-hi="अनाज" data-te="ధాన్యాలు">Grains</button>
+<button data-s="timeline" data-en="5000 Years" data-hi="5000 वर्ष" data-te="5000 సంవత్సరాలు">5000 Years</button>
+<button data-s="foods" data-en="Daily Foods" data-hi="दैनिक भोजन" data-te="రోజువారీ ఆహారం">Daily Foods</button>
+<button data-s="protein" data-en="Protein" data-hi="प्रोटीन" data-te="ప్రోటీన్">Protein</button>
+<button data-s="navadhanya" data-en="Nava Dhanya" data-hi="नवधान्य" data-te="నవధాన్యాలు">Nava Dhanya</button>
+<button data-s="principles" data-en="Principles" data-hi="सिद्धान्त" data-te="సిద్ధాంతాలు">Principles</button>
+<button data-s="herbs" data-en="Herbs" data-hi="जड़ी-बूटियाँ" data-te="మూలికలు">Herbs</button>
+<button data-s="meals" data-en="Your Plan" data-hi="आपकी योजना" data-te="మీ ప్రణాళిక">Your Plan</button>
+<button data-s="modern" data-en="Modern Disease" data-hi="आधुनिक रोग" data-te="ఆధునిక వ్యాధులు">Modern Disease</button>
+<button data-s="sources" data-en="Sources" data-hi="स्रोत" data-te="మూలాలు">Sources</button>
+</div>
+
+<!-- ============================================== -->
+<!-- INTRODUCTION -->
+<!-- ============================================== -->
+<div class="sec on" id="intro">
+
+<div class="lang-content active" data-lang="en">
+<p class="lead">Before the Green Revolution. Before British famine economics. Before the Mughal court's rice-and-biryani obsession. Before even the Gupta Golden Age — the Indian subcontinent ate very differently than we imagine today.</p>
+
+<p>The story modern Indians tell themselves — that rice-dal-subzi is "our traditional diet" — is largely a twentieth-century invention. Walk into any Telugu kitchen in the year 900 AD and you'd find <em>jonna rotte</em> and <em>ragi sangati</em>, not a mound of white rice. In Punjab you'd find <em>yava</em> (barley) dominating. In the Indus Valley cities of 2500 BCE, archaeological digs reveal <strong>barley and wheat as the dominant grains</strong> — with rice as a minor, regional player.</p>
+
+<div class="pull">
+"Charaka listed six tastes in every meal, seasonal eating protocols, and food-body constitution matching 2,000 years before modern nutritional science rediscovered these principles. The wisdom was systematic, not folk."
+</div>
+
+<p>This guide isn't about romanticizing the past or rejecting modernity. It's about answering one specific question with honesty: <strong>what did people in the Indian subcontinent actually eat in the pre-1200 AD period, and does any of it matter for how you should eat today?</strong></p>
+
+<p>The short answer: more than you'd think.</p>
+
+<div class="dev-sep">॥ ॐ ॥</div>
+
+<h3>What this guide covers</h3>
+
+<div class="grid-2">
+<div class="card">
+<h5>Part I · History</h5>
+<div class="name">The real diet</div>
+<p>What actual Vedic texts, the Charaka Samhita, and archaeological digs tell us — not marketing copy from supplement brands.</p>
+</div>
+<div class="card">
+<h5>Part II · Principles</h5>
+<div class="name">Timing & tastes</div>
+<p>Six-taste meals, seasonal regimens, the eat-with-the-sun principle — and which of these have been validated by modern science.</p>
+</div>
+<div class="card">
+<h5>Part III · Application</h5>
+<div class="name">Modern meal plan</div>
+<p>Two millet days to integrate into a modern weekly diet, chosen to preserve macros while honoring Telugu culinary heritage.</p>
+</div>
+<div class="card">
+<h5>Part IV · Sources</h5>
+<div class="name">The evidence</div>
+<p>Every claim linked back to primary texts or peer-reviewed research. No Ayurveda-brand marketing. No Instagram-guru hearsay.</p>
+</div>
+</div>
+</div>
+
+<div class="lang-content" data-lang="hi">
+<p class="lead">हरित क्रांति से पहले। ब्रिटिश अकाल अर्थशास्त्र से पहले। मुगल दरबार के चावल-बिरयानी जुनून से पहले। यहाँ तक कि गुप्त स्वर्ण युग से भी पहले — भारतीय उपमहाद्वीप वैसा बिल्कुल नहीं खाता था जैसा हम आज सोचते हैं।</p>
+
+<p>आधुनिक भारतीय खुद से जो कहानी कहते हैं — कि चावल-दाल-सब्जी "हमारा पारंपरिक भोजन" है — वह बड़े पैमाने पर बीसवीं सदी का आविष्कार है। 900 ईस्वी में किसी भी तेलुगु रसोई में जाइए और आपको <em>जोन्न रोट्टे</em> और <em>रागी सङ्गटि</em> मिलेगी, सफेद चावल का ढेर नहीं। पंजाब में आपको <em>यव</em> (जौ) प्रमुख रूप से मिलेगा। 2500 ईसा पूर्व की सिंधु घाटी सभ्यता के नगरों में, पुरातात्विक खुदाई से पता चलता है <strong>जौ और गेहूं प्रमुख अनाज थे</strong> — चावल एक छोटा, क्षेत्रीय खिलाड़ी था।</p>
+
+<div class="pull">
+"चरक ने प्रत्येक भोजन में छह रसों, मौसमी आहार प्रोटोकॉल, और शरीर-प्रकृति के अनुसार भोजन का वर्णन आधुनिक पोषण विज्ञान द्वारा इन सिद्धांतों की पुनः खोज से 2,000 वर्ष पहले किया था। यह ज्ञान व्यवस्थित था, लोक-कथा नहीं।"
+</div>
+
+<p>यह मार्गदर्शिका अतीत को रोमांटिक बनाने या आधुनिकता को अस्वीकार करने के बारे में नहीं है। यह एक विशिष्ट प्रश्न का ईमानदारी से उत्तर देने के बारे में है: <strong>1200 ईस्वी से पहले के काल में भारतीय उपमहाद्वीप के लोग वास्तव में क्या खाते थे, और क्या इसका कोई अर्थ है कि आज आपको कैसे खाना चाहिए?</strong></p>
+
+<p>संक्षिप्त उत्तर: जितना आप सोचते हैं उससे अधिक।</p>
+
+<div class="dev-sep">॥ ॐ ॥</div>
+
+<h3>यह मार्गदर्शिका क्या कवर करती है</h3>
+
+<div class="grid-2">
+<div class="card">
+<h5>भाग I · इतिहास</h5>
+<div class="name">वास्तविक आहार</div>
+<p>वास्तविक वैदिक ग्रंथ, चरक संहिता, और पुरातात्विक खुदाई हमें क्या बताती हैं — सप्लीमेंट ब्रांडों की मार्केटिंग कॉपी नहीं।</p>
+</div>
+<div class="card">
+<h5>भाग II · सिद्धान्त</h5>
+<div class="name">समय और रस</div>
+<p>छह-रस भोजन, ऋतुचर्या, सूर्य के साथ खाने का सिद्धांत — और इनमें से कौन से आधुनिक विज्ञान द्वारा सत्यापित हुए हैं।</p>
+</div>
+<div class="card">
+<h5>भाग III · अनुप्रयोग</h5>
+<div class="name">आधुनिक भोजन योजना</div>
+<p>आधुनिक साप्ताहिक आहार में एकीकृत करने के लिए दो मिलेट दिन, मैक्रोज़ को संरक्षित करते हुए तेलुगु पाक विरासत का सम्मान करने के लिए चुने गए।</p>
+</div>
+<div class="card">
+<h5>भाग IV · स्रोत</h5>
+<div class="name">प्रमाण</div>
+<p>हर दावा प्राथमिक ग्रंथों या सहकर्मी-समीक्षित अनुसंधान से जुड़ा है। कोई आयुर्वेद-ब्रांड मार्केटिंग नहीं। कोई इंस्टाग्राम-गुरु अफवाह नहीं।</p>
+</div>
+</div>
+</div>
+
+<div class="lang-content" data-lang="te">
+<p class="lead">హరిత విప్లవానికి ముందు. బ్రిటిష్ కరువు ఆర్థికశాస్త్రానికి ముందు. మొఘల్ ఆస్థానపు బియ్యం-బిర్యానీ ఆసక్తికి ముందు. గుప్త స్వర్ణ యుగానికి కూడా ముందు — భారత ఉపఖండం మనం ఈరోజు ఊహించే దానికంటే చాలా భిన్నంగా తినేది.</p>
+
+<p>ఆధునిక భారతీయులు తమకు తాము చెప్పుకునే కథ — అన్నం-పప్పు-కూర మన "సంప్రదాయ ఆహారం" అని — ఎక్కువగా ఇరవయ్యవ శతాబ్దపు కల్పన. క్రీ.శ. 900లో ఏ తెలుగు వంటగదిలోకైనా వెళ్ళండి, మీకు <em>జొన్న రొట్టె</em> మరియు <em>రాగి సంగటి</em> కనిపిస్తుంది, తెల్ల అన్నం కుప్ప కాదు. పంజాబ్‌లో <em>యవ</em> (బార్లీ) ప్రధానంగా కనిపిస్తుంది. క్రీ.పూ. 2500 నాటి సింధు లోయ నగరాలలో, పురావస్తు తవ్వకాలు <strong>బార్లీ మరియు గోధుమలు ప్రధాన ధాన్యాలు</strong> అని వెల్లడిస్తాయి — బియ్యం ఒక చిన్న, ప్రాంతీయ పాత్రధారి.</p>
+
+<div class="pull">
+"ఆధునిక పోషకాహార శాస్త్రం ఈ సూత్రాలను తిరిగి కనుగొనడానికి 2,000 సంవత్సరాల ముందే చరకుడు ప్రతి భోజనంలో ఆరు రుచులు, రుతువుల ప్రకారం ఆహార నియమావళి, శరీర-ప్రకృతికి సరిపోయే ఆహారం వివరించాడు. ఈ జ్ఞానం వ్యవస్థీకృతమైనది, జానపదం కాదు."
+</div>
+
+<p>ఈ మార్గదర్శి గతాన్ని భావోద్వేగంగా చూడటం లేదా ఆధునికతను తిరస్కరించడం గురించి కాదు. ఇది ఒక నిర్దిష్ట ప్రశ్నకు నిజాయితీగా సమాధానం ఇవ్వడం గురించి: <strong>క్రీ.శ. 1200కి ముందు కాలంలో భారత ఉపఖండంలోని ప్రజలు నిజంగా ఏమి తినేవారు, మరియు మీరు ఈరోజు ఎలా తినాలో దానికి ఏదైనా అర్థం ఉందా?</strong></p>
+
+<p>సంక్షిప్త సమాధానం: మీరు అనుకునే దాని కంటే ఎక్కువ.</p>
+
+<div class="dev-sep">॥ ॐ ॥</div>
+
+<h3>ఈ మార్గదర్శి ఏమి కవర్ చేస్తుంది</h3>
+
+<div class="grid-2">
+<div class="card">
+<h5>భాగం I · చరిత్ర</h5>
+<div class="name">అసలు ఆహారం</div>
+<p>నిజమైన వేద గ్రంథాలు, చరక సంహిత, పురావస్తు తవ్వకాలు మనకు చెప్పేది — సప్లిమెంట్ బ్రాండ్ల మార్కెటింగ్ కాపీ కాదు.</p>
+</div>
+<div class="card">
+<h5>భాగం II · సూత్రాలు</h5>
+<div class="name">సమయం మరియు రుచులు</div>
+<p>షడ్రసాలు, రుతుచర్య, సూర్యునితో తినే సూత్రం — వీటిలో ఏవి ఆధునిక శాస్త్రం ద్వారా ధృవీకరించబడ్డాయి.</p>
+</div>
+<div class="card">
+<h5>భాగం III · అప్లికేషన్</h5>
+<div class="name">ఆధునిక భోజన ప్రణాళిక</div>
+<p>ఆధునిక వారపు ఆహారంలో సమగ్రపరచడానికి రెండు మిల్లెట్ రోజులు, మాక్రోలను కాపాడుతూ తెలుగు పాక వారసత్వాన్ని గౌరవిస్తాయి.</p>
+</div>
+<div class="card">
+<h5>భాగం IV · మూలాలు</h5>
+<div class="name">ఆధారాలు</div>
+<p>ప్రతి దావా ప్రాథమిక గ్రంథాలు లేదా పీర్-రివ్యూడ్ పరిశోధనకు అనుసంధానించబడింది. ఆయుర్వేద-బ్రాండ్ మార్కెటింగ్ లేదు. ఇన్‌స్టాగ్రామ్-గురు పుకార్లు లేవు.</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- Placeholder for other sections -->
+<!-- ============================================== -->
+<!-- GRAINS -->
+<!-- ============================================== -->
+<div class="sec" id="grains">
+
+<div class="lang-content active" data-lang="en">
+<h2><span class="num">Part I · Chapter 1</span>Was pre-1200 AD India rice-heavy?</h2>
+
+<p class="lead">No. The rice-centric diet you see in modern India is roughly 60 years old. Before the 1960s Green Revolution made rice artificially cheap, the subcontinent ate a radically more diverse grain base — with rice often being a minor, festival, or regional staple.</p>
+
+<h3>What the Vedas actually say</h3>
+
+<p>The <em>Rigveda</em> (c. 1500-1000 BCE) mentions <span class="sans">यव</span> (<em>Yava</em>, barley) more than any other grain — dozens of references, used in rituals, as daily food, and as offerings. <span class="sans">व्रीहि</span> (<em>Vrihi</em>, rice) appears, but as one grain among many, never as <em>the</em> staple.<sup>[1]</sup></p>
+
+<p>By the time of the Charaka Samhita (c. 100 BCE – 200 CE), the classification was systematic. Grains were grouped under <em>Shuka Dhanya</em> (bristled grains) in this rough order of importance:</p>
+
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>Sanskrit</th><th>Grain</th><th>Notes from Charaka</th></tr></thead>
+<tbody>
+<tr><td><span class="sans">शालि</span> <em>Shali</em></td><td>Rice varieties</td><td>Sweet, cold-potency, constipating if eaten in excess</td></tr>
+<tr><td><span class="sans">गोधूम</span> <em>Godhuma</em></td><td>Wheat</td><td>Nourishing, heavy to digest, strength-promoting</td></tr>
+<tr><td><span class="sans">यव</span> <em>Yava</em></td><td>Barley</td><td><strong>Declared <em>nityasevaniya dravya</em> — food for daily intake</strong></td></tr>
+<tr><td><span class="sans">श्यामाक</span> <em>Shyamaka</em></td><td>Barnyard millet</td><td>Light, absorbs moisture, good for Kapha</td></tr>
+<tr><td><span class="sans">चीनक</span> <em>Chinaka</em></td><td>Millets (general)</td><td>Astringent, dry, mentioned extensively</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="pull">
+"Acharya Charaka mentioned <em>Yava</em> as <em>nityasevaniya dravya</em> — meant for daily intake — which underlines the importance of barley in disease prevention and health management."
+<span class="cite">Sushruta Samhita Sutra 46/41-42</span>
+</div>
+
+<h3>The regional picture</h3>
+
+<p>The Charaka Samhita itself acknowledges <strong>regional dietary diversity</strong>. Different parts of the subcontinent ate different grains:</p>
+
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>Region</th><th>Primary grain(s)</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td>Sindhu Desha (NW)</td><td>Wheat, barley</td><td>Cooler, drier climate</td></tr>
+<tr><td>Madhya Desha (Central)</td><td>Barley, wheat, dairy</td><td>Charaka's home region</td></tr>
+<tr><td>Rajasthan/Gujarat</td><td><strong>Bajra, jowar, wheat</strong></td><td>Drought-resistant grains</td></tr>
+<tr><td>Deccan (Telangana/AP)</td><td><strong>Jonna, ragi, korra</strong></td><td>Semi-arid plateau</td></tr>
+<tr><td>Tamilakam (South)</td><td>Rice, ragi, mixed</td><td>Water availability varied</td></tr>
+<tr><td>Vanga (Bengal)</td><td>Rice-dominant</td><td>The only clearly rice-heavy region</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Note: <strong>Telugu heritage in the Telangana region centered on jonna rotte and ragi sangati as daily staples for centuries.</strong> White rice at every meal is a recent break from a millennia-long tradition in the region.</p>
+
+<div class="stat-band">
+<div class="stat-grid">
+<div><div class="num">~5×</div><div class="lbl">References to barley vs rice in Rigveda</div></div>
+<div><div class="num">1960s</div><div class="lbl">When rice became the national staple</div></div>
+<div><div class="num">6</div><div class="lbl">Distinct regional grain cultures in Charaka</div></div>
+</div>
+</div>
+
+<h3>Why the shift happened</h3>
+
+<p>Five forces converged between 1900 and 1970 to make rice India's "traditional" staple:</p>
+
+<ol>
+<li><strong>British famine policy.</strong> Colonial administrators promoted rice and wheat because they stored and transported better. Millets, requiring local grinding and immediate consumption, were labeled "primitive."</li>
+<li><strong>Green Revolution (1960s-70s).</strong> IR8 "miracle rice" and high-yield wheat got massive government subsidies. Millet research was effectively abandoned.</li>
+<li><strong>PDS/ration system.</strong> Cheap rice via public distribution displaced diverse local grains. Millets became "poor man's food."</li>
+<li><strong>Urbanization.</strong> Millets required daily grinding — feasible in villages, impractical in Bombay flats. Rice cooks in 15 minutes with no prep.</li>
+<li><strong>Cultural aspiration.</strong> White rice became associated with prosperity, cleanliness, modernity. Millets got coded as rural and backward.</li>
+</ol>
+
+<p>The irony: a grandmother in 1960s rural Andhra was probably eating a more nutritious, more "traditionally Indian" diet than most urban Indians today.</p>
+</div>
+
+<div class="lang-content" data-lang="hi">
+<h2><span class="num">भाग I · अध्याय 1</span>क्या 1200 ईस्वी से पहले का भारत चावल-प्रधान था?</h2>
+
+<p class="lead">नहीं। आधुनिक भारत में आप जो चावल-केंद्रित आहार देखते हैं वह लगभग 60 साल पुराना है। 1960 के दशक की हरित क्रांति ने चावल को कृत्रिम रूप से सस्ता बनाने से पहले, उपमहाद्वीप एक मौलिक रूप से अधिक विविध अनाज आधार खाता था — चावल अक्सर एक छोटा, त्योहारी, या क्षेत्रीय मुख्य भोजन था।</p>
+
+<h3>वेद वास्तव में क्या कहते हैं</h3>
+
+<p><em>ऋग्वेद</em> (लगभग 1500-1000 ईसा पूर्व) में <span class="sans">यव</span> (<em>यव</em>, जौ) का उल्लेख किसी भी अन्य अनाज से अधिक है — दर्जनों संदर्भ, अनुष्ठानों में, दैनिक भोजन के रूप में, और प्रसाद के रूप में उपयोग किया गया। <span class="sans">व्रीहि</span> (<em>व्रीहि</em>, चावल) प्रकट होता है, लेकिन कई में से एक अनाज के रूप में, कभी भी <em>मुख्य</em> भोजन के रूप में नहीं।<sup>[1]</sup></p>
+
+<p>चरक संहिता (लगभग 100 ईसा पूर्व – 200 ईस्वी) के समय तक, वर्गीकरण व्यवस्थित था। अनाज को <em>शुक धान्य</em> (बालदार अनाज) के अंतर्गत महत्व के मोटे क्रम में समूहित किया गया था:</p>
+
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>संस्कृत</th><th>अनाज</th><th>चरक के नोट्स</th></tr></thead>
+<tbody>
+<tr><td><span class="sans">शालि</span> <em>शालि</em></td><td>चावल की किस्में</td><td>मधुर, शीत-वीर्य, अधिक खाने पर कब्ज पैदा करने वाला</td></tr>
+<tr><td><span class="sans">गोधूम</span> <em>गोधूम</em></td><td>गेहूं</td><td>पौष्टिक, पचने में भारी, बल-वर्धक</td></tr>
+<tr><td><span class="sans">यव</span> <em>यव</em></td><td>जौ</td><td><strong><em>नित्यसेवनीय द्रव्य</em> घोषित — दैनिक सेवन के लिए भोजन</strong></td></tr>
+<tr><td><span class="sans">श्यामाक</span> <em>श्यामाक</em></td><td>सावां बाजरा</td><td>हल्का, नमी सोखने वाला, कफ के लिए अच्छा</td></tr>
+<tr><td><span class="sans">चीनक</span> <em>चीनक</em></td><td>बाजरा (सामान्य)</td><td>कषाय, सूखा, व्यापक रूप से उल्लेखित</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="pull">
+"आचार्य चरक ने <em>यव</em> को <em>नित्यसेवनीय द्रव्य</em> के रूप में उल्लेख किया — दैनिक सेवन के लिए — जो रोग निवारण और स्वास्थ्य प्रबंधन में जौ के महत्व को रेखांकित करता है।"
+<span class="cite">सुश्रुत संहिता सूत्र 46/41-42</span>
+</div>
+
+<h3>क्षेत्रीय चित्र</h3>
+
+<p>चरक संहिता स्वयं <strong>क्षेत्रीय आहार विविधता</strong> को स्वीकार करती है। उपमहाद्वीप के विभिन्न हिस्सों में अलग-अलग अनाज खाए जाते थे:</p>
+
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>क्षेत्र</th><th>प्राथमिक अनाज</th><th>क्यों</th></tr></thead>
+<tbody>
+<tr><td>सिंधु देश (उ.प.)</td><td>गेहूं, जौ</td><td>ठंडी, सूखी जलवायु</td></tr>
+<tr><td>मध्य देश (केंद्रीय)</td><td>जौ, गेहूं, डेयरी</td><td>चरक का गृह क्षेत्र</td></tr>
+<tr><td>राजस्थान/गुजरात</td><td><strong>बाजरा, ज्वार, गेहूं</strong></td><td>सूखा-प्रतिरोधी अनाज</td></tr>
+<tr><td>दक्कन (तेलंगाना/आं.प्र.)</td><td><strong>जोन्न, रागी, कोर्र</strong></td><td>अर्ध-शुष्क पठार</td></tr>
+<tr><td>तमिलकम (दक्षिण)</td><td>चावल, रागी, मिश्रित</td><td>पानी की उपलब्धता भिन्न</td></tr>
+<tr><td>वंग (बंगाल)</td><td>चावल-प्रधान</td><td>एकमात्र स्पष्ट रूप से चावल-प्रधान क्षेत्र</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>ध्यान दें: <strong>तेलंगाना क्षेत्र में तेलुगु विरासत सदियों से जोन्न रोट्टे और रागी सङ्गटि को दैनिक मुख्य भोजन के रूप में केंद्रित रही।</strong> हर भोजन में सफेद चावल इस क्षेत्र में हजारों साल पुरानी परंपरा से हाल का विचलन है।</p>
+
+<div class="stat-band">
+<div class="stat-grid">
+<div><div class="num">~5×</div><div class="lbl">ऋग्वेद में जौ बनाम चावल के संदर्भ</div></div>
+<div><div class="num">1960s</div><div class="lbl">जब चावल राष्ट्रीय मुख्य भोजन बना</div></div>
+<div><div class="num">6</div><div class="lbl">चरक में अलग क्षेत्रीय अनाज संस्कृतियाँ</div></div>
+</div>
+</div>
+
+<h3>परिवर्तन क्यों हुआ</h3>
+
+<p>1900 और 1970 के बीच पाँच शक्तियाँ एकत्रित हुईं जिन्होंने चावल को भारत का "पारंपरिक" मुख्य भोजन बना दिया:</p>
+
+<ol>
+<li><strong>ब्रिटिश अकाल नीति।</strong> औपनिवेशिक प्रशासकों ने चावल और गेहूं को बढ़ावा दिया क्योंकि वे बेहतर ढंग से संग्रहित और परिवहन योग्य थे। बाजरा, जिसे स्थानीय पीसने और तत्काल खपत की आवश्यकता थी, को "आदिम" कहा गया।</li>
+<li><strong>हरित क्रांति (1960-70 के दशक)।</strong> IR8 "चमत्कारी चावल" और उच्च उपज वाले गेहूं को बड़े पैमाने पर सरकारी सब्सिडी मिली। बाजरा अनुसंधान प्रभावी रूप से छोड़ दिया गया।</li>
+<li><strong>PDS/राशन प्रणाली।</strong> सार्वजनिक वितरण के माध्यम से सस्ते चावल ने विविध स्थानीय अनाजों को विस्थापित किया। बाजरा "गरीब आदमी का भोजन" बन गया।</li>
+<li><strong>शहरीकरण।</strong> बाजरा को दैनिक पीसने की आवश्यकता थी — गांवों में संभव, बंबई के फ्लैटों में अव्यावहारिक। चावल बिना तैयारी के 15 मिनट में पकता है।</li>
+<li><strong>सांस्कृतिक आकांक्षा।</strong> सफेद चावल समृद्धि, स्वच्छता, आधुनिकता से जुड़ गया। बाजरा को ग्रामीण और पिछड़ा कोडित किया गया।</li>
+</ol>
+
+<p>विडंबना: 1960 के दशक के ग्रामीण आंध्र में एक दादी संभवतः आज के अधिकांश शहरी भारतीयों की तुलना में अधिक पौष्टिक, अधिक "पारंपरिक भारतीय" आहार खा रही थी।</p>
+</div>
+
+<div class="lang-content" data-lang="te">
+<h2><span class="num">భాగం I · అధ్యాయం 1</span>క్రీ.శ. 1200కి ముందు భారతదేశం బియ్యం-ప్రధానమా?</h2>
+
+<p class="lead">కాదు. ఆధునిక భారతదేశంలో మీరు చూసే బియ్యం-కేంద్రిత ఆహారం దాదాపు 60 సంవత్సరాల పాతది. 1960ల హరిత విప్లవం బియ్యాన్ని కృత్రిమంగా చౌకగా చేయడానికి ముందు, ఉపఖండం తీవ్రంగా మరింత వైవిధ్యమైన ధాన్య ఆధారాన్ని తినేది — బియ్యం తరచుగా ఒక చిన్న, పండుగ, లేదా ప్రాంతీయ ప్రధాన ఆహారం.</p>
+
+<h3>వేదాలు నిజంగా ఏమి చెబుతున్నాయి</h3>
+
+<p><em>ఋగ్వేదం</em> (క్రీ.పూ. 1500-1000) <span class="sans">యవ</span> (<em>యవ</em>, బార్లీ)ను ఇతర ఏ ధాన్యం కంటే ఎక్కువగా ప్రస్తావిస్తుంది — డజన్ల కొద్దీ సూచనలు, ఆచారాలలో, రోజువారీ ఆహారంగా, మరియు అర్పణలుగా ఉపయోగించబడింది. <span class="sans">వ్రీహి</span> (<em>వ్రీహి</em>, బియ్యం) కనిపిస్తుంది, కానీ అనేక ధాన్యాలలో ఒకటిగా, ఎప్పుడూ <em>ప్రధాన</em> ఆహారంగా కాదు.<sup>[1]</sup></p>
+
+<p>చరక సంహిత (క్రీ.పూ. 100 – క్రీ.శ. 200) సమయానికి, వర్గీకరణ వ్యవస్థీకృతమైంది. ధాన్యాలు ప్రాముఖ్యత స్థూల క్రమంలో <em>శూక ధాన్య</em> (గడ్డి-తల ధాన్యాలు) కింద సమూహపరచబడ్డాయి:</p>
+
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>సంస్కృతం</th><th>ధాన్యం</th><th>చరకుడి గమనికలు</th></tr></thead>
+<tbody>
+<tr><td><span class="sans">శాలి</span> <em>శాలి</em></td><td>బియ్యం రకాలు</td><td>తీపి, శీతల-వీర్యం, అధికంగా తింటే మలబద్ధకం కలిగించేది</td></tr>
+<tr><td><span class="sans">గోధూమ</span> <em>గోధూమ</em></td><td>గోధుమ</td><td>పోషకమైనది, జీర్ణం కావడం బరువు, బలవర్ధకం</td></tr>
+<tr><td><span class="sans">యవ</span> <em>యవ</em></td><td>బార్లీ</td><td><strong><em>నిత్యసేవనీయ ద్రవ్య</em>గా ప్రకటించబడింది — రోజువారీ ఆహారం కోసం</strong></td></tr>
+<tr><td><span class="sans">శ్యామాక</span> <em>శ్యామాక</em></td><td>ఊదలు</td><td>తేలికైనది, తేమను శోషిస్తుంది, కఫానికి మంచిది</td></tr>
+<tr><td><span class="sans">చీనక</span> <em>చీనక</em></td><td>మిల్లెట్లు (సాధారణం)</td><td>వగరు, పొడి, విస్తృతంగా ప్రస్తావించబడింది</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="pull">
+"ఆచార్య చరకుడు <em>యవ</em>ను <em>నిత్యసేవనీయ ద్రవ్య</em>గా ప్రస్తావించాడు — రోజువారీ తీసుకోవడానికి — ఇది వ్యాధి నివారణ మరియు ఆరోగ్య నిర్వహణలో బార్లీ యొక్క ప్రాముఖ్యతను నొక్కిచెబుతుంది."
+<span class="cite">సుశ్రుత సంహిత సూత్ర 46/41-42</span>
+</div>
+
+<h3>ప్రాంతీయ చిత్రం</h3>
+
+<p>చరక సంహిత స్వయంగా <strong>ప్రాంతీయ ఆహార వైవిధ్యాన్ని</strong> గుర్తిస్తుంది. ఉపఖండంలోని వివిధ భాగాలు వేర్వేరు ధాన్యాలు తినేవి:</p>
+
+<div class="tbl-wrap">
+<table class="tbl">
+<thead><tr><th>ప్రాంతం</th><th>ప్రాథమిక ధాన్యం(లు)</th><th>ఎందుకు</th></tr></thead>
+<tbody>
+<tr><td>సింధు దేశం (వా.ప.)</td><td>గోధుమ, బార్లీ</td><td>చల్లని, పొడి వాతావరణం</td></tr>
+<tr><td>మధ్య దేశం (కేంద్ర)</td><td>బార్లీ, గోధుమ, పాడి</td><td>చరకుడి స్వగ్రామ ప్రాంతం</td></tr>
+<tr><td>రాజస్థాన్/గుజరాత్</td><td><strong>సజ్జలు, జొన్న, గోధుమ</strong></td><td>కరువు-నిరోధక ధాన్యాలు</td></tr>
+<tr><td>దక్కన్ (తెలంగాణ/ఆంధ్ర)</td><td><strong>జొన్న, రాగి, కొర్ర</strong></td><td>సెమి-అరిడ్ పీఠభూమి</td></tr>
+<tr><td>తమిళకం (దక్షిణం)</td><td>బియ్యం, రాగి, మిశ్రమం</td><td>నీటి లభ్యత మారుతూ ఉంటుంది</td></tr>
+<tr><td>వంగ (బెంగాల్)</td><td>బియ్యం-ప్రధానం</td><td>ఏకైక స్పష్టంగా బియ్యం-ప్రధాన ప్రాంతం</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>గమనిక: <strong>తెలంగాణ ప్రాంతంలో తెలుగు వారసత్వం శతాబ్దాలుగా జొన్న రొట్టె మరియు రాగి సంగటిని రోజువారీ ప్రధాన ఆహారాలుగా కేంద్రీకృతమైంది.</strong> ప్రతి భోజనంలో తెల్ల అన్నం ఈ ప్రాంతంలో సహస్రాబ్దాల నాటి సంప్రదాయం నుండి ఇటీవలి విరామం.</p>
+
+<div class="stat-band">
+<div class="stat-grid">
+<div><div class="num">~5×</div><div class="lbl">ఋగ్వేదంలో బార్లీ vs బియ్యం సూచనలు</div></div>
+<div><div class="num">1960s</div><div class="lbl">బియ్యం జాతీయ ప్రధాన ఆహారంగా మారిన సమయం</div></div>
+<div><div class="num">6</div><div class="lbl">చరకలో ప్రత్యేక ప్రాంతీయ ధాన్య సంస్కృతులు</div></div>
+</div>
+</div>
+
+<h3>మార్పు ఎందుకు జరిగింది</h3>
+
+<p>1900 మరియు 1970 మధ్య ఐదు శక్తులు కలిసి బియ్యాన్ని భారతదేశ "సంప్రదాయ" ప్రధాన ఆహారంగా చేశాయి:</p>
+
+<ol>
+<li><strong>బ్రిటిష్ కరువు విధానం.</strong> వలస పాలకులు బియ్యం మరియు గోధుమను ప్రోత్సహించారు ఎందుకంటే అవి బాగా నిల్వ ఉండి, రవాణా చేయగలిగేవి. స్థానిక గ్రైండింగ్ మరియు తక్షణ వినియోగం అవసరమైన మిల్లెట్లను "ప్రాచీన"గా లేబుల్ చేశారు.</li>
+<li><strong>హరిత విప్లవం (1960-70లు).</strong> IR8 "మిరాకిల్ రైస్" మరియు అధిక-ఉత్పత్తి గోధుమకు భారీ ప్రభుత్వ సబ్సిడీలు లభించాయి. మిల్లెట్ పరిశోధన ప్రభావవంతంగా వదిలివేయబడింది.</li>
+<li><strong>PDS/రేషన్ వ్యవస్థ.</strong> ప్రజా పంపిణీ ద్వారా చౌక బియ్యం వైవిధ్యమైన స్థానిక ధాన్యాలను స్థానభ్రంశం చేసింది. మిల్లెట్లు "పేద వ్యక్తి ఆహారం"గా మారాయి.</li>
+<li><strong>పట్టణీకరణ.</strong> మిల్లెట్లకు రోజువారీ గ్రైండింగ్ అవసరం — గ్రామాలలో సాధ్యం, బాంబే ఫ్లాట్‌లలో అసాధ్యం. బియ్యం ఎటువంటి తయారీ లేకుండా 15 నిమిషాలలో ఉడకుతుంది.</li>
+<li><strong>సాంస్కృతిక ఆకాంక్ష.</strong> తెల్ల బియ్యం సంపన్నత, పరిశుభ్రత, ఆధునికతతో సంబంధం కలిగింది. మిల్లెట్లు గ్రామీణ మరియు వెనుకబడినవిగా కోడిఫై చేయబడ్డాయి.</li>
+</ol>
+
+<p>వ్యంగ్యం: 1960ల గ్రామీణ ఆంధ్రాలో ఒక అమ్మమ్మ బహుశా ఈరోజు చాలా మంది పట్టణ భారతీయుల కంటే మరింత పోషకమైన, మరింత "సంప్రదాయ భారతీయ" ఆహారం తినేది.</p>
+</div>
+
+</div>
+<div class="sec" id="timeline"></div>
+<div class="sec" id="foods"></div>
+<div class="sec" id="protein"></div>
+<div class="sec" id="navadhanya"></div>
+<div class="sec" id="principles"></div>
+<div class="sec" id="herbs"></div>
+<div class="sec" id="meals"></div>
+<div class="sec" id="modern"></div>
+<div class="sec" id="sources"></div>
+
+</div>
+
+<!-- Chapter content loaded from separate files for maintainability.
+     Each script populates its placeholder div via document.getElementById(id).innerHTML.
+     Loaded synchronously before the language switcher script runs. -->
+<script src="chapters/timeline.js"></script>
+<script src="chapters/foods.js"></script>
+<script src="chapters/protein.js"></script>
+<script src="chapters/navadhanya.js"></script>
+<script src="chapters/principles.js"></script>
+<script src="chapters/herbs.js"></script>
+<script src="chapters/meals.js"></script>
+<script src="chapters/modern.js"></script>
+<script src="chapters/sources.js"></script>
+
+<script>
+// Language switcher
+const langButtons = document.querySelectorAll('.lang-btn');
+const body = document.body;
+
+function setLang(lang){
+  body.dataset.lang = lang;
+  body.lang = lang;
+  langButtons.forEach(b => b.classList.toggle('on', b.dataset.lang === lang));
+  document.querySelectorAll('.lang-content').forEach(el => {
+    el.classList.toggle('active', el.dataset.lang === lang);
+  });
+  // Update nav button labels
+  document.querySelectorAll('.nav button').forEach(btn => {
+    const label = btn.dataset[lang] || btn.dataset.en;
+    if(label) btn.textContent = label;
+  });
+  try{ localStorage.setItem('al-lang', lang); }catch(e){}
+}
+
+langButtons.forEach(btn => {
+  btn.addEventListener('click', () => setLang(btn.dataset.lang));
+});
+
+// Section navigation
+const navButtons = document.querySelectorAll('.nav button');
+const secs = document.querySelectorAll('.sec');
+navButtons.forEach(b => {
+  b.onclick = () => {
+    navButtons.forEach(x => x.classList.remove('on'));
+    b.classList.add('on');
+    secs.forEach(s => s.classList.remove('on'));
+    document.getElementById(b.dataset.s).classList.add('on');
+    window.scrollTo({top:0,behavior:'smooth'});
+  };
+});
+
+// Restore language preference
+try{
+  const saved = localStorage.getItem('al-lang');
+  if(saved && ['en','hi','te'].includes(saved)) setLang(saved);
+}catch(e){}
+
+// Font size selector — 4 sizes, default = index 2 (second-largest)
+const FS_PX = [14, 16, 18, 21];
+const FS_DEFAULT = 2;
+const fsButtons = document.querySelectorAll('.fs-btn');
+function setFontSize(idx){
+  document.documentElement.style.fontSize = FS_PX[idx] + 'px';
+  fsButtons.forEach((b, i) => b.classList.toggle('on', i === idx));
+  try{ localStorage.setItem('al-fs', String(idx)); }catch(e){}
+}
+fsButtons.forEach((b, i) => b.addEventListener('click', () => setFontSize(i)));
+(function initFontSize(){
+  let idx = FS_DEFAULT;
+  try{
+    const saved = parseInt(localStorage.getItem('al-fs'), 10);
+    if(!isNaN(saved) && saved >= 0 && saved < FS_PX.length) idx = saved;
+  }catch(e){}
+  setFontSize(idx);
+})();
+</script>
+
+</body>
+</html>
