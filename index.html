@@ -270,9 +270,49 @@ sup{font-size:.65em;color:var(--accent);font-weight:600}
 .fs-btn:nth-child(4){font-size:1.15rem}
 .fs-btn:hover{color:var(--accent)}
 .fs-btn.on{background:var(--ink);color:var(--paper)}
+@media(max-width:640px){
+  .fs-bar{
+    top:auto;
+    bottom:.9rem;
+    right:.9rem;
+    box-shadow:0 2px 10px rgba(31,26,18,.12);
+  }
+}
+
+/* Section prev/next navigation */
+.sec-nav{
+  display:flex;align-items:center;gap:.5rem;
+  margin-top:2.5rem;padding-top:1.5rem;
+  border-top:1px solid var(--border);
+}
+.sec-nav .sec-nav-space{flex:1}
+.sec-nav-btn{
+  font-family:'Inter',sans-serif;
+  background:transparent;border:1.5px solid var(--border);
+  color:var(--ink-soft);cursor:pointer;
+  padding:9px 14px;text-align:left;
+  transition:all .25s;min-width:0;max-width:clamp(120px,30vw,200px);
+}
+.sec-nav-btn.next{text-align:right}
+.sec-nav-btn:hover{border-color:var(--accent);color:var(--accent)}
+.sec-nav-btn .sec-nav-dir{
+  display:block;font-size:.58rem;letter-spacing:.14em;
+  text-transform:uppercase;opacity:.6;margin-bottom:2px;line-height:1;
+}
+.sec-nav-btn .sec-nav-name{
+  display:block;font-size:.7rem;letter-spacing:.06em;
+  text-transform:uppercase;font-weight:500;line-height:1.2;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+body[data-lang="hi"] .sec-nav-btn,
+body[data-lang="te"] .sec-nav-btn{font-family:inherit;text-transform:none;letter-spacing:0}
+body[data-lang="hi"] .sec-nav-btn .sec-nav-dir,
+body[data-lang="te"] .sec-nav-btn .sec-nav-dir{letter-spacing:0;text-transform:none;font-size:.68rem}
+body[data-lang="hi"] .sec-nav-btn .sec-nav-name,
+body[data-lang="te"] .sec-nav-btn .sec-nav-name{font-size:.82rem;letter-spacing:0;text-transform:none}
 @media(max-width:480px){
-  .fs-bar{top:.4rem;right:.4rem;padding:2px}
-  .fs-btn{padding:2px 5px}
+  .sec-nav-btn .sec-nav-name{display:none}
+  .sec-nav-btn{padding:8px 11px;max-width:none}
 }
 
 /* Shared-timeline chart (modern.js) */
@@ -822,6 +862,7 @@ function setLang(lang){
     if(label) btn.textContent = label;
   });
   try{ localStorage.setItem('al-lang', lang); }catch(e){}
+  refreshSecNav(lang);
 }
 
 langButtons.forEach(btn => {
@@ -846,6 +887,58 @@ try{
   const saved = localStorage.getItem('al-lang');
   if(saved && ['en','hi','te'].includes(saved)) setLang(saved);
 }catch(e){}
+
+// Section prev/next navigation
+const SEC_ORDER = ['intro','grains','timeline','foods','protein','navadhanya','principles','herbs','meals','modern','sources'];
+const SEC_DIR_LABELS = {
+  en:{prev:'← Previous', next:'Next →'},
+  hi:{prev:'← पिछला',    next:'अगला →'},
+  te:{prev:'← మునుపటి',  next:'తదుపరి →'}
+};
+
+function refreshSecNav(lang){
+  const labels = SEC_DIR_LABELS[lang] || SEC_DIR_LABELS.en;
+  document.querySelectorAll('.sec-nav-btn').forEach(btn => {
+    const targetNavBtn = document.querySelector(`.nav button[data-s="${btn.dataset.target}"]`);
+    const name = targetNavBtn ? (targetNavBtn.dataset[lang] || targetNavBtn.dataset.en || '') : '';
+    btn.querySelector('.sec-nav-dir').textContent  = btn.classList.contains('prev') ? labels.prev : labels.next;
+    btn.querySelector('.sec-nav-name').textContent = name;
+  });
+}
+
+function buildSectionNav(){
+  SEC_ORDER.forEach((id, i) => {
+    const sec = document.getElementById(id);
+    if(!sec) return;
+    const wrap = document.createElement('div');
+    wrap.className = 'sec-nav';
+    const prevId = i > 0 ? SEC_ORDER[i-1] : null;
+    const nextId = i < SEC_ORDER.length-1 ? SEC_ORDER[i+1] : null;
+    if(prevId){
+      const btn = document.createElement('button');
+      btn.className = 'sec-nav-btn prev';
+      btn.dataset.target = prevId;
+      btn.innerHTML = '<span class="sec-nav-dir"></span><span class="sec-nav-name"></span>';
+      btn.onclick = () => { const nb = document.querySelector(`.nav button[data-s="${prevId}"]`); if(nb) nb.click(); };
+      wrap.appendChild(btn);
+    }
+    const sp = document.createElement('div');
+    sp.className = 'sec-nav-space';
+    wrap.appendChild(sp);
+    if(nextId){
+      const btn = document.createElement('button');
+      btn.className = 'sec-nav-btn next';
+      btn.dataset.target = nextId;
+      btn.innerHTML = '<span class="sec-nav-dir"></span><span class="sec-nav-name"></span>';
+      btn.onclick = () => { const nb = document.querySelector(`.nav button[data-s="${nextId}"]`); if(nb) nb.click(); };
+      wrap.appendChild(btn);
+    }
+    sec.appendChild(wrap);
+  });
+  refreshSecNav(body.dataset.lang || 'en');
+}
+
+buildSectionNav();
 
 // Font size selector — 4 sizes, default = index 2 (second-largest)
 const FS_PX = [14, 16, 18, 21];
